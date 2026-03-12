@@ -592,6 +592,10 @@ const setupProcessFlows = () => {
     }
 
     let activeIndex = 0;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchDeltaX = 0;
+    let touchDeltaY = 0;
 
     const alignActiveStep = (behavior = "auto") => {
       if (window.innerWidth > 860) {
@@ -720,6 +724,59 @@ const setupProcessFlows = () => {
         setStep(activeIndex + 1, { stepScrollBehavior: "smooth" });
       });
     }
+
+    viewport.addEventListener(
+      "touchstart",
+      (event) => {
+        if (window.innerWidth > 720 || !event.touches.length) {
+          return;
+        }
+
+        touchStartX = event.touches[0].clientX;
+        touchStartY = event.touches[0].clientY;
+        touchDeltaX = 0;
+        touchDeltaY = 0;
+      },
+      { passive: true }
+    );
+
+    viewport.addEventListener(
+      "touchmove",
+      (event) => {
+        if (window.innerWidth > 720 || !event.touches.length) {
+          return;
+        }
+
+        touchDeltaX = event.touches[0].clientX - touchStartX;
+        touchDeltaY = event.touches[0].clientY - touchStartY;
+      },
+      { passive: true }
+    );
+
+    viewport.addEventListener(
+      "touchend",
+      () => {
+        if (window.innerWidth > 720) {
+          return;
+        }
+
+        const isHorizontalSwipe = Math.abs(touchDeltaX) > 44 && Math.abs(touchDeltaX) > Math.abs(touchDeltaY);
+
+        if (!isHorizontalSwipe) {
+          return;
+        }
+
+        if (touchDeltaX < 0) {
+          setStep(activeIndex + 1, { stepScrollBehavior: "smooth" });
+        } else {
+          setStep(activeIndex - 1, { stepScrollBehavior: "smooth" });
+        }
+
+        touchDeltaX = 0;
+        touchDeltaY = 0;
+      },
+      { passive: true }
+    );
 
     window.addEventListener("resize", syncFlow);
 

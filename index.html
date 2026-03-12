@@ -15,6 +15,27 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="./styles/main.css">
+  <script>
+    (() => {
+      const navigationEntry = performance.getEntriesByType?.("navigation")?.[0];
+      const shouldResetScroll = !window.location.hash && navigationEntry?.type !== "back_forward";
+
+      if (!shouldResetScroll) {
+        return;
+      }
+
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      const resetScroll = () => {
+        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      };
+
+      resetScroll();
+      window.addEventListener("pageshow", resetScroll, { once: true });
+    })();
+  </script>
 </head>
 <body>
   <div class="page-noise" aria-hidden="true"></div>

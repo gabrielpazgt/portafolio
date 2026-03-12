@@ -224,7 +224,7 @@ const setupContactForm = () => {
 
     if (!email) {
       setFormStatus(
-        "Por ahora puedes escribirme por WhatsApp o LinkedIn mientras termino de conectar el correo directo.";
+        "Por ahora puedes escribirme por WhatsApp o LinkedIn mientras termino de conectar el correo directo."
       );
       return;
     }

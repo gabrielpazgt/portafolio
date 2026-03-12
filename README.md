@@ -1,6 +1,6 @@
 # ✨ Portafolio Frontend de Gabriel Paz
 
-Sitio web estático multipágina diseñado para presentar perfil profesional, casos conceptuales y una vista de CV online con una estética moderna, clara y orientada a producto.
+Sitio web estático multipágina diseñado para presentar perfil profesional, casos conceptuales y una descarga directa de CV en PDF con una estética moderna, clara y orientada a producto.
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -12,7 +12,7 @@ Sitio web estático multipágina diseñado para presentar perfil profesional, ca
 Este proyecto funciona como portafolio personal y carta de presentación profesional. Incluye:
 
 - Landing principal con enfoque comercial y narrativa visual.
-- CV online conectado a la misma configuración base.
+- Descarga directa del CV en formato PDF.
 - Demos conceptuales para distintos tipos de negocio.
 - Configuración centralizada para enlaces, identidad y datos personales.
 - Despliegue simple en GitHub Pages sin build ni dependencias.
@@ -29,12 +29,10 @@ Este proyecto funciona como portafolio personal y carta de presentación profesi
 | Ruta | Descripción |
 | --- | --- |
 | `index.html` | Landing principal del portafolio. |
-| `cv.html` | CV online enlazado al mismo perfil. |
+| `Gabriel-Paz-CV.pdf` | CV descargable desde los botones del sitio. |
 | `styles/main.css` | Estilos globales de la landing. |
-| `styles/cv.css` | Estilos dedicados a la vista de CV. |
 | `scripts/portfolio-data.js` | Datos editables: nombre, rol, enlaces y contacto. |
 | `scripts/main.js` | Navegación, animaciones, reveal y lógica de formulario. |
-| `scripts/cv.js` | Enlace de datos para la vista del CV. |
 | `demos/` | Casos conceptuales por industria. |
 | `.nojekyll` | Evita problemas de procesamiento en GitHub Pages. |
 
@@ -139,7 +137,7 @@ https://gabrielpazgt.github.io/portafolio/
 - Agrega tu correo real en `scripts/portfolio-data.js`.
 - Si usarás formulario directo, configura `contactFormEndpoint`.
 - Revisa que los enlaces de LinkedIn y GitHub sean los definitivos.
-- Comprueba que `cv.html` y las rutas dentro de `demos/` abran correctamente.
+- Comprueba que `Gabriel-Paz-CV.pdf` y las rutas dentro de `demos/` abran correctamente.
 - Haz una última revisión visual en desktop y mobile.
 
 ## 📧 Conectar el formulario de contacto

@@ -578,6 +578,7 @@ const setupProcessFlows = () => {
   processFlows.forEach((flow) => {
     const viewport = flow.querySelector(".process-stage-window");
     const track = flow.querySelector(".process-stage-track");
+    const stepGrid = flow.querySelector(".process-step-grid");
     const steps = [...flow.querySelectorAll("[data-process-trigger]")];
     const panels = [...flow.querySelectorAll("[data-process-panel]")];
     const dots = [...flow.querySelectorAll("[data-process-dot]")];
@@ -586,13 +587,45 @@ const setupProcessFlows = () => {
     const progressFill = flow.querySelector(".process-progress-fill");
     const currentNode = flow.querySelector("[data-process-current]");
 
-    if (!viewport || !track || !steps.length || steps.length !== panels.length) {
+    if (!viewport || !track || !stepGrid || !steps.length || steps.length !== panels.length) {
       return;
     }
 
     let activeIndex = 0;
 
-    const syncFlow = (shouldFocus = false) => {
+    const alignActiveStep = (behavior = "auto") => {
+      if (window.innerWidth > 860) {
+        return;
+      }
+
+      const activeStep = steps[activeIndex];
+
+      if (!activeStep) {
+        return;
+      }
+
+      const maxScrollLeft = stepGrid.scrollWidth - stepGrid.clientWidth;
+
+      if (maxScrollLeft <= 0) {
+        return;
+      }
+
+      const targetLeft = activeStep.offsetLeft - (stepGrid.clientWidth - activeStep.offsetWidth) / 2;
+      const nextScrollLeft = Math.max(0, Math.min(targetLeft, maxScrollLeft));
+      const scrollBehavior = prefersReducedMotion.matches ? "auto" : behavior;
+
+      if (typeof stepGrid.scrollTo === "function") {
+        stepGrid.scrollTo({
+          left: nextScrollLeft,
+          behavior: scrollBehavior
+        });
+        return;
+      }
+
+      stepGrid.scrollLeft = nextScrollLeft;
+    };
+
+    const syncFlow = ({ shouldFocus = false, stepScrollBehavior = "" } = {}) => {
       const offset = viewport.clientWidth * activeIndex;
       const progress = steps.length > 1 ? (activeIndex / (steps.length - 1)) * 100 : 100;
 
@@ -628,12 +661,8 @@ const setupProcessFlows = () => {
 
       const activeStep = steps[activeIndex];
 
-      if (activeStep && window.innerWidth <= 860) {
-        activeStep.scrollIntoView({
-          behavior: prefersReducedMotion.matches ? "auto" : "smooth",
-          block: "nearest",
-          inline: "center"
-        });
+      if (stepScrollBehavior) {
+        alignActiveStep(stepScrollBehavior);
       }
 
       if (shouldFocus && activeStep) {
@@ -641,54 +670,54 @@ const setupProcessFlows = () => {
       }
     };
 
-    const setStep = (nextIndex, shouldFocus = false) => {
+    const setStep = (nextIndex, options = {}) => {
       activeIndex = (nextIndex + steps.length) % steps.length;
-      syncFlow(shouldFocus);
+      syncFlow(options);
     };
 
     steps.forEach((step, index) => {
       step.addEventListener("click", () => {
-        setStep(index);
+        setStep(index, { stepScrollBehavior: "smooth" });
       });
 
       step.addEventListener("keydown", (event) => {
         if (event.key === "ArrowRight" || event.key === "ArrowDown") {
           event.preventDefault();
-          setStep(index + 1, true);
+          setStep(index + 1, { shouldFocus: true, stepScrollBehavior: "smooth" });
         }
 
         if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
           event.preventDefault();
-          setStep(index - 1, true);
+          setStep(index - 1, { shouldFocus: true, stepScrollBehavior: "smooth" });
         }
 
         if (event.key === "Home") {
           event.preventDefault();
-          setStep(0, true);
+          setStep(0, { shouldFocus: true, stepScrollBehavior: "smooth" });
         }
 
         if (event.key === "End") {
           event.preventDefault();
-          setStep(steps.length - 1, true);
+          setStep(steps.length - 1, { shouldFocus: true, stepScrollBehavior: "smooth" });
         }
       });
     });
 
     dots.forEach((dot, index) => {
       dot.addEventListener("click", () => {
-        setStep(index);
+        setStep(index, { stepScrollBehavior: "smooth" });
       });
     });
 
     if (previousButton) {
       previousButton.addEventListener("click", () => {
-        setStep(activeIndex - 1);
+        setStep(activeIndex - 1, { stepScrollBehavior: "smooth" });
       });
     }
 
     if (nextButton) {
       nextButton.addEventListener("click", () => {
-        setStep(activeIndex + 1);
+        setStep(activeIndex + 1, { stepScrollBehavior: "smooth" });
       });
     }
 

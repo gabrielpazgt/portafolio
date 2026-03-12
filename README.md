@@ -5,7 +5,6 @@ Sitio web estático multipágina diseñado para presentar perfil profesional, ca
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-1F1F1F?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-121013?style=for-the-badge&logo=github&logoColor=white)
 
 ## 🌐 Vista general
 
@@ -15,14 +14,14 @@ Este proyecto funciona como portafolio personal y carta de presentación profesi
 - Descarga directa del CV en formato PDF.
 - Demos conceptuales para distintos tipos de negocio.
 - Configuración centralizada para enlaces, identidad y datos personales.
-- Despliegue simple en GitHub Pages sin build ni dependencias.
+- Despliegue simple en hosting estatico sin build ni dependencias.
 
 ## 🧰 Stack
 
 - `HTML5`
 - `CSS3`
 - `JavaScript` vanilla
-- `GitHub Pages` para despliegue
+- Hosting estatico
 
 ## 📁 Estructura del proyecto
 
@@ -34,7 +33,7 @@ Este proyecto funciona como portafolio personal y carta de presentación profesi
 | `scripts/portfolio-data.js` | Datos editables: nombre, rol, enlaces y contacto. |
 | `scripts/main.js` | Navegación, animaciones, reveal y lógica de formulario. |
 | `demos/` | Casos conceptuales por industria. |
-| `.nojekyll` | Evita problemas de procesamiento en GitHub Pages. |
+| `.nojekyll` | Archivo opcional para despliegues estaticos sin procesamiento adicional. |
 
 ## 🎨 Demos incluidas
 
@@ -55,7 +54,7 @@ Antes de publicarlo, te conviene revisar estos puntos:
 1. Edita `scripts/portfolio-data.js`.
 2. Completa `email` con tu correo real.
 3. Si vas a usar formulario real, agrega tu endpoint en `contactFormEndpoint`.
-4. Verifica `brandName`, `role`, `whatsapp`, `github`, `linkedin` y `cv`.
+4. Verifica `brandName`, `role`, `whatsapp`, `linkedin` y `cv`.
 5. Ajusta textos del `index.html` si quieres enfocar mejor tu propuesta.
 6. Sustituye demos conceptuales por proyectos reales cuando quieras mostrar trabajo final.
 
@@ -86,63 +85,50 @@ Puedes usar una extensión como:
 - `Live Preview`
 - `Live Server`
 
-## 🚀 Publicar en GitHub Pages
+## 🚀 Publicar en hosting estatico
 
-Este repositorio ya está listo para publicarse como sitio estático. Como tu remoto actual es:
+Este proyecto esta listo para publicarse en cualquier servicio de hosting estatico.
 
-```text
-https://github.com/gabrielpazgt/portafolio.git
-```
+### 1. Sube los archivos
 
-la URL esperada de GitHub Pages será:
+Publica el contenido raiz del proyecto tal como esta:
 
-```text
-https://gabrielpazgt.github.io/portafolio/
-```
+- `index.html`
+- `styles/`
+- `scripts/`
+- `demos/`
+- `Gabriel-Paz-CV.pdf`
+- `.nojekyll` si tu proveedor lo requiere
 
-### 1. Sube tus cambios al repositorio
+### 2. Define tu dominio o URL publica
 
-```powershell
-git add .
-git commit -m "feat: update portfolio and README"
-git push origin main
-```
+Puedes usar:
 
-### 2. Activa GitHub Pages en GitHub
+- Un subdominio tipo `portfolio.tudominio.com`
+- Un dominio principal
+- Una URL temporal del proveedor mientras haces pruebas
 
-En tu repositorio entra a:
+### 3. Verifica el sitio publicado
 
-```text
-Settings > Pages
-```
+Antes de compartirlo, revisa:
 
-Configura estas opciones:
-
-- `Source`: `Deploy from a branch`
-- `Branch`: `main`
-- `Folder`: `/ (root)`
-
-Después guarda los cambios.
-
-### 3. Espera la publicación
-
-GitHub normalmente tarda entre 1 y 10 minutos en dejar el sitio disponible. Cuando termine, podrás abrir:
-
-```text
-https://gabrielpazgt.github.io/portafolio/
-```
+- Navegacion principal
+- Descarga del CV
+- Demos dentro de `demos/`
+- Formulario o enlaces de contacto
+- Version desktop y mobile
 
 ## ✅ Recomendaciones antes de publicar
 
 - Agrega tu correo real en `scripts/portfolio-data.js`.
 - Si usarás formulario directo, configura `contactFormEndpoint`.
-- Revisa que los enlaces de LinkedIn y GitHub sean los definitivos.
+- Revisa que los enlaces visibles sean los definitivos.
 - Comprueba que `Gabriel-Paz-CV.pdf` y las rutas dentro de `demos/` abran correctamente.
 - Haz una última revisión visual en desktop y mobile.
 
 ## 📧 Conectar el formulario de contacto
 
-La forma más simple para este proyecto es usar `Formspree`, porque funciona bien con sitios estáticos en GitHub Pages.
+La forma mas simple para este proyecto es usar `Formspree`, porque funciona bien con sitios estaticos.
 
 1. Crea un formulario en Formspree.
 2. Copia el endpoint que te entregue, algo como:
@@ -157,15 +143,14 @@ https://formspree.io/f/tu_codigo
 contactFormEndpoint: "https://formspree.io/f/tu_codigo",
 ```
 
-4. Publica de nuevo el sitio con `git push origin main`.
+4. Publica de nuevo el sitio en tu hosting estatico.
 
 Si `contactFormEndpoint` está vacío, el portafolio usa el modo actual de `mailto` como fallback.
 
 ## 📬 Contacto
 
-- GitHub: [gabrielpaz](https://github.com/gabrielpaz)
 - LinkedIn: [Gabriel Paz](https://www.linkedin.com/in/gabriel-paz-gapg/)
 
 ## 📌 Nota
 
-Este proyecto no necesita `npm install`, compilación ni pipeline adicional para desplegarse en GitHub Pages. Con subir los archivos y activar Pages desde `main` es suficiente.
+Este proyecto no necesita `npm install`, compilacion ni pipeline adicional para publicarse. Con subir los archivos a un hosting estatico es suficiente.

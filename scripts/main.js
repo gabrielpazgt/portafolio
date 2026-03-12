@@ -231,6 +231,7 @@ const setupContactForm = () => {
 
     const name = String(formData.get("name") || "").trim();
     const senderEmail = String(formData.get("email") || "").trim();
+    const phone = String(formData.get("phone") || "").trim();
     const project = String(formData.get("project") || "").trim();
     const message = String(formData.get("message") || "").trim();
 
@@ -239,6 +240,7 @@ const setupContactForm = () => {
       [
         `Nombre: ${name}`,
         `Correo: ${senderEmail}`,
+        `Telefono: ${phone}`,
         `Proyecto: ${project}`,
         "",
         "Mensaje:",

@@ -1,0 +1,571 @@
+:root {
+  --bg: #f4ede2;
+  --bg-deep: #241813;
+  --surface: rgba(255, 249, 241, 0.76);
+  --card: #efe3d3;
+  --text: #261913;
+  --muted: #6d574c;
+  --line: rgba(38, 25, 19, 0.12);
+  --accent: #8e5a3b;
+  --accent-strong: #a56a46;
+  --radius-lg: 34px;
+  --radius-md: 22px;
+  --radius-sm: 16px;
+  --container: min(1180px, calc(100% - 2rem));
+  --transition: 300ms ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(142, 90, 59, 0.18), transparent 26%),
+    linear-gradient(180deg, #f5eee4 0%, #f0e6d9 100%);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  background-image: radial-gradient(rgba(38, 25, 19, 0.08) 0.8px, transparent 0.8px);
+  background-size: 12px 12px;
+}
+
+.container {
+  width: var(--container);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(245, 238, 228, 0.86);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+}
+
+.site-header.is-scrolled {
+  border-color: var(--line);
+  box-shadow: 0 10px 30px rgba(38, 25, 19, 0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 84px;
+}
+
+.brand {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+  transition: color var(--transition);
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--text);
+}
+
+.nav-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  width: 46px;
+  height: 46px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 0 auto;
+  background: var(--text);
+  transition: transform var(--transition);
+}
+
+.nav-toggle span + span {
+  margin-top: 6px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 1.5rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fef8f1;
+  border: 1px solid transparent;
+  font-weight: 700;
+  transition: transform var(--transition), background var(--transition);
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+  background: var(--accent-strong);
+}
+
+.button-outline {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--line);
+}
+
+.hero-grid,
+.split-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(142, 90, 59, 0.08);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.hero h1,
+.section-heading h2,
+.story-copy h2,
+.reservation-panel h2 {
+  margin: 1rem 0;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  line-height: 0.98;
+}
+
+.hero h1 {
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
+}
+
+.hero p,
+.story-copy p,
+.section-heading p,
+.menu-card p,
+.experience-card p,
+.reservation-panel p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 540px;
+  display: grid;
+  place-items: center;
+}
+
+.hero-panel {
+  position: absolute;
+  max-width: 230px;
+  padding: 1.3rem;
+  border-radius: 24px;
+  background: rgba(255, 249, 241, 0.74);
+  border: 1px solid rgba(38, 25, 19, 0.1);
+  box-shadow: 0 24px 60px rgba(38, 25, 19, 0.12);
+}
+
+.hero-panel span,
+.menu-card span {
+  display: inline-flex;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.hero-panel strong {
+  display: block;
+  margin: 0.7rem 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.hero-panel-main {
+  left: 0;
+  top: 2rem;
+}
+
+.hero-panel-side {
+  right: 0;
+  bottom: 4rem;
+}
+
+.hero-cup {
+  position: relative;
+  width: min(100%, 360px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 42%, #3f2417 0 28%, #7e5b46 28% 37%, #f7efe4 37% 50%, transparent 50%),
+    linear-gradient(180deg, #f7efe4 0%, #e7d2ba 100%);
+  box-shadow: 0 45px 90px rgba(65, 38, 24, 0.2);
+}
+
+.hero-cup::before {
+  content: "";
+  position: absolute;
+  inset: 1.3rem;
+  border-radius: 50%;
+  border: 1px solid rgba(38, 25, 19, 0.12);
+}
+
+.hero-cup::after {
+  content: "";
+  position: absolute;
+  right: -48px;
+  top: 35%;
+  width: 90px;
+  height: 120px;
+  border: 16px solid #e7d2ba;
+  border-left: 0;
+  border-radius: 0 120px 120px 0;
+}
+
+.latte-art {
+  position: absolute;
+  inset: 30% 32%;
+  border-radius: 50% 50% 60% 60%;
+  background: radial-gradient(circle at top, #f5dcc3, #d1b39a 70%);
+  transform: rotate(-12deg);
+  opacity: 0.92;
+}
+
+.stats {
+  padding-top: 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.stats-grid article,
+.visual-card,
+.menu-card,
+.experience-card,
+.reservation-panel {
+  background: rgba(255, 249, 241, 0.72);
+  border: 1px solid rgba(38, 25, 19, 0.1);
+  box-shadow: 0 24px 60px rgba(38, 25, 19, 0.08);
+}
+
+.stats-grid article {
+  padding: 1.3rem;
+  border-radius: 24px;
+}
+
+.stats-grid strong {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3rem;
+}
+
+.stats-grid span {
+  color: var(--muted);
+}
+
+.visual-card {
+  border-radius: 34px;
+  padding: 2rem;
+}
+
+.room-scene {
+  position: relative;
+  min-height: 420px;
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.18)),
+    linear-gradient(180deg, #dec8ad 0%, #bf9d78 100%);
+  overflow: hidden;
+}
+
+.scene-window {
+  position: absolute;
+  inset: 1.5rem 1.5rem auto auto;
+  width: 40%;
+  height: 52%;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.16)),
+    linear-gradient(180deg, #f9f3ea 0%, #ddcab2 100%);
+  border: 10px solid rgba(255, 250, 241, 0.6);
+}
+
+.scene-table {
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  bottom: 2rem;
+  height: 72px;
+  border-radius: 40px 40px 28px 28px;
+  background: #5e3e2d;
+}
+
+.scene-table::before,
+.scene-table::after {
+  content: "";
+  position: absolute;
+  bottom: -62px;
+  width: 10px;
+  height: 70px;
+  background: #5e3e2d;
+}
+
+.scene-table::before {
+  left: 26%;
+}
+
+.scene-table::after {
+  right: 26%;
+}
+
+.scene-lamp {
+  position: absolute;
+  left: 18%;
+  top: 10%;
+  width: 74px;
+  height: 120px;
+  border-radius: 40px 40px 18px 18px;
+  background: linear-gradient(180deg, #faf3ea 0%, #e8d5c0 100%);
+}
+
+.scene-lamp::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -58px;
+  width: 8px;
+  height: 78px;
+  transform: translateX(-50%);
+  background: #72503d;
+}
+
+.story-copy h2,
+.section-heading h2,
+.reservation-panel h2 {
+  font-size: clamp(2.5rem, 4vw, 4.2rem);
+}
+
+.menu-grid,
+.experience-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.menu-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.menu-card,
+.experience-card {
+  padding: 1.4rem;
+  border-radius: 24px;
+}
+
+.menu-card h3,
+.experience-card strong {
+  display: block;
+  margin: 0.75rem 0 0.5rem;
+  font-size: 1.3rem;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 2rem;
+}
+
+.experience-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.reservation-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 34px;
+  background:
+    linear-gradient(135deg, rgba(255, 249, 241, 0.92), rgba(239, 227, 211, 0.82));
+}
+
+.reservation-meta {
+  display: grid;
+  gap: 0.7rem;
+  justify-items: start;
+}
+
+.reservation-meta strong {
+  font-size: 1.2rem;
+}
+
+.site-footer {
+  padding: 0 0 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 980px) {
+  .hero-grid,
+  .split-grid,
+  .reservation-panel,
+  .stats-grid,
+  .menu-grid,
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 780px) {
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: 1rem;
+    right: 1rem;
+    display: grid;
+    gap: 0.3rem;
+    padding: 1rem;
+    border-radius: 22px;
+    background: rgba(245, 238, 228, 0.98);
+    border: 1px solid var(--line);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity var(--transition), transform var(--transition);
+  }
+
+  .site-nav.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .header-inner > .button {
+    display: none;
+  }
+
+  .nav-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .nav-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 4.2rem 0;
+  }
+
+  .hero-cup {
+    width: min(100%, 280px);
+  }
+
+  .hero-cup::after {
+    right: -34px;
+    width: 64px;
+    height: 90px;
+  }
+
+  .hero-panel {
+    max-width: 200px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

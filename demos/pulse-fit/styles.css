@@ -1,0 +1,426 @@
+:root {
+  --bg: #090a0d;
+  --surface: rgba(16, 18, 24, 0.86);
+  --text: #f4f5f7;
+  --muted: #a6acb8;
+  --line: rgba(255, 255, 255, 0.1);
+  --accent: #d8ff57;
+  --accent-strong: #ff7a18;
+  --radius-lg: 30px;
+  --radius-md: 22px;
+  --container: min(1120px, calc(100% - 2rem));
+  --shadow: 0 26px 70px rgba(0, 0, 0, 0.34);
+  --transition: 260ms ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(216, 255, 87, 0.12), transparent 22%),
+    radial-gradient(circle at bottom right, rgba(255, 122, 24, 0.14), transparent 24%),
+    linear-gradient(180deg, #07080b 0%, #0b0d12 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.energy {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(44px);
+  pointer-events: none;
+  opacity: 0.44;
+}
+
+.energy-a {
+  top: 120px;
+  right: 8vw;
+  width: 200px;
+  height: 200px;
+  background: rgba(216, 255, 87, 0.34);
+}
+
+.energy-b {
+  left: -80px;
+  bottom: 16vh;
+  width: 240px;
+  height: 240px;
+  background: rgba(255, 122, 24, 0.22);
+}
+
+.container {
+  width: var(--container);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(16px);
+  background: rgba(9, 10, 13, 0.8);
+  border-bottom: 1px solid transparent;
+}
+
+.site-header.is-scrolled {
+  border-color: var(--line);
+}
+
+.header-inner {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand,
+.hero h1,
+.section-heading h2,
+.membership-copy h2,
+.contact-panel h2,
+.hero-card strong,
+.price-card strong {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.brand {
+  font-size: 1.8rem;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 1.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, var(--accent), #f4ffbb);
+  color: #10140d;
+  font-weight: 800;
+  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(216, 255, 87, 0.14);
+}
+
+.button-outline {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--line);
+}
+
+.nav-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  background: transparent;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 0 auto;
+  background: var(--text);
+}
+
+.nav-toggle span + span {
+  margin-top: 6px;
+}
+
+.hero-grid,
+.membership-grid,
+.contact-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.eyebrow,
+.card-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(216, 255, 87, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 1rem 0;
+  font-size: clamp(3.8rem, 7vw, 6.2rem);
+  line-height: 0.9;
+  max-width: 9ch;
+}
+
+.hero p,
+.section-heading p,
+.class-card p,
+.membership-copy p,
+.price-card p,
+.contact-panel p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.hero-panel,
+.hero-side,
+.class-grid,
+.pricing-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.hero-card,
+.class-card,
+.price-card,
+.contact-panel {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.hero-card {
+  padding: 1.4rem;
+  border-radius: var(--radius-lg);
+}
+
+.primary-card {
+  background:
+    radial-gradient(circle at top right, rgba(216, 255, 87, 0.14), transparent 28%),
+    linear-gradient(135deg, rgba(255, 122, 24, 0.08), rgba(0, 0, 0, 0)),
+    rgba(18, 21, 29, 0.94);
+}
+
+.hero-card strong {
+  display: block;
+  margin: 1rem 0 0.6rem;
+  font-size: 2.2rem;
+}
+
+.meter {
+  margin-top: 1.4rem;
+  height: 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.meter span {
+  display: block;
+  width: 74%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  animation: barMove 4.2s ease-in-out infinite;
+}
+
+.compact-card strong {
+  font-size: 1.5rem;
+}
+
+.accent-card {
+  border-color: rgba(255, 122, 24, 0.2);
+}
+
+.section-heading {
+  max-width: 780px;
+  margin-bottom: 1.8rem;
+}
+
+.section-heading h2,
+.membership-copy h2,
+.contact-panel h2 {
+  margin: 1rem 0;
+  font-size: clamp(2.6rem, 4.6vw, 4.8rem);
+  line-height: 0.94;
+}
+
+.class-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.class-card,
+.price-card {
+  padding: 1.35rem;
+  border-radius: var(--radius-md);
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.class-card:hover,
+.price-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(216, 255, 87, 0.24);
+}
+
+.class-card strong,
+.price-card strong {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-size: 1.7rem;
+}
+
+.class-card span,
+.price-card span {
+  display: inline-flex;
+  margin-top: 1rem;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.membership-section {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+}
+
+.pricing-stack {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.featured {
+  background:
+    radial-gradient(circle at top right, rgba(216, 255, 87, 0.16), transparent 30%),
+    rgba(18, 21, 29, 0.94);
+  transform: translateY(-10px);
+}
+
+.contact-panel {
+  padding: 1.8rem;
+  border-radius: var(--radius-lg);
+}
+
+.site-footer {
+  padding: 0 0 2.4rem;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 650ms ease, transform 650ms ease;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes barMove {
+  0%,
+  100% {
+    width: 74%;
+  }
+  50% {
+    width: 86%;
+  }
+}
+
+@media (max-width: 980px) {
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 1rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+    border-radius: 22px;
+    background: rgba(11, 13, 18, 0.98);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .header-inner > .button {
+    display: none;
+  }
+
+  .hero-grid,
+  .membership-grid,
+  .contact-panel,
+  .class-grid,
+  .pricing-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .featured {
+    transform: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 4.2rem 0;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

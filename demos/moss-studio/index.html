@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Moss Studio es una demo conceptual para portafolio: un estudio de arquitectura con narrativa editorial, obra destacada y una identidad sobria."
+  >
+  <title>Moss Studio | Architecture & Interiors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio">Moss Studio</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="#obra">Obra</a>
+        <a href="#estudio">Estudio</a>
+        <a href="#consulta">Consulta</a>
+      </nav>
+      <a class="button" href="#consulta">Ver disponibilidad</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal>
+          <span class="eyebrow">Architecture / interiors / spatial direction</span>
+          <h1>Una identidad editorial para presentar obra, espacio y criterio de estudio.</h1>
+          <p>
+            Moss Studio es una demo conceptual para un estudio de arquitectura e interiorismo. La propuesta busca que
+            el sitio se sienta sobrio, contemporaneo y muy enfocado en mostrar trabajo con buen ritmo visual.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#obra">Ver proyectos</a>
+            <a class="button button-outline" href="#consulta">Agendar llamada</a>
+          </div>
+        </div>
+
+        <div class="hero-composition" data-reveal>
+          <div class="composition-block block-main"></div>
+          <div class="composition-block block-vertical"></div>
+          <article class="composition-note">
+            <span class="eyebrow">Selected spaces</span>
+            <strong>Residencial, hospitality y retail boutique</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="obra">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <span class="eyebrow">Obra</span>
+          <h2>Una presentacion de portafolio que deja respirar los proyectos.</h2>
+          <p>
+            La idea de esta demo es reemplazar la clasica cuadricula saturada por una composicion mas editorial, donde
+            cada bloque se sienta elegido y la navegacion tenga mejor ritmo.
+          </p>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card tall" data-reveal>
+            <div class="work-visual visual-atelier"></div>
+            <div class="work-copy">
+              <strong>Casa Ladera</strong>
+              <p>Proyecto residencial con materialidad neutra, iluminacion suave y transiciones interiores limpias.</p>
+            </div>
+          </article>
+          <article class="work-card" data-reveal>
+            <div class="work-visual visual-hotel"></div>
+            <div class="work-copy">
+              <strong>Hotel Arco</strong>
+              <p>Concepto de hospitalidad con lobby contenido, tonos tierra y atmosfera refinada.</p>
+            </div>
+          </article>
+          <article class="work-card" data-reveal>
+            <div class="work-visual visual-retail"></div>
+            <div class="work-copy">
+              <strong>Monolith Store</strong>
+              <p>Espacio comercial planteado para exhibicion, recorrido corto y una presencia mas arquitectonica.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section studio-section" id="estudio">
+      <div class="container studio-grid">
+        <div class="studio-copy" data-reveal>
+          <span class="eyebrow">Estudio</span>
+          <h2>Menos decoracion gratuita, mas atencion al espacio y la forma.</h2>
+          <p>
+            La demo cuida tipografia, vacio visual, proporciones y contrastes suaves para que la identidad del estudio
+            se perciba mas madura y coherente.
+          </p>
+        </div>
+
+        <div class="studio-points" data-reveal>
+          <article>
+            <strong>Narrativa visual</strong>
+            <p>Bloques con aire, imagenes amplias y un tono que no compite con la obra.</p>
+          </article>
+          <article>
+            <strong>Jerarquia editorial</strong>
+            <p>Titulares con peso, descripciones cortas y espacios pensados para un portafolio serio.</p>
+          </article>
+          <article>
+            <strong>Cierre elegante</strong>
+            <p>La consulta final se siente natural y no rompe la atmosfera construida en el resto del sitio.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section consult-section" id="consulta">
+      <div class="container consult-panel" data-reveal>
+        <div>
+          <span class="eyebrow">Consulta</span>
+          <h2>Una direccion visual lista para hablar con clientes de alto criterio.</h2>
+          <p>Este concepto esta pensado para mostrar portfolio, tono de estudio y una salida clara hacia contacto.</p>
+        </div>
+        <a class="button" href="mailto:studio@mossstudio.demo">Iniciar conversacion</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Demo conceptual creada para portafolio. Estudio ficticio para mostrar direccion editorial y presentacion de obra.</p>
+      <a href="../../index.html">Volver al portafolio</a>
+    </div>
+  </footer>
+
+  <script src="../demo-shared.js"></script>
+</body>
+</html>

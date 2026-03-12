@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Solara Wellness es una demo conceptual para portafolio: marca de bienestar, tratamientos y reservas con una experiencia visual serena."
+  >
+  <title>Solara Wellness | Rituals & Skin Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="ambient-shape ambient-a" aria-hidden="true"></div>
+  <div class="ambient-shape ambient-b" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio">Solara Wellness</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="#rituales">Rituales</a>
+        <a href="#espacio">Espacio</a>
+        <a href="#agenda">Agenda</a>
+      </nav>
+      <a class="button" href="#agenda">Reservar</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal>
+          <span class="eyebrow">Skin rituals, breathwork and quiet care</span>
+          <h1>Una experiencia wellness que se siente suave, cuidada y facil de reservar.</h1>
+          <p>
+            Solara Wellness es una demo conceptual para una marca enfocada en tratamientos, rituales faciales y
+            espacios de pausa. La idea es mostrar una UX calmada, premium y comercial al mismo tiempo.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#rituales">Ver rituales</a>
+            <a class="button button-outline" href="#agenda">Agendar sesion</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-reveal>
+          <article class="visual-card main-card">
+            <span>Signature ritual</span>
+            <strong>Solar Reset</strong>
+            <p>Limpieza profunda, masaje facial y una atmósfera construida desde la calma.</p>
+          </article>
+          <article class="visual-card side-card">
+            <div class="orb"></div>
+            <span>Booking flow</span>
+            <strong>Simple, corto y claro</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rituales">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <span class="eyebrow">Rituales</span>
+          <h2>Tratamientos presentados con una sensacion mucho mas cuidada que un catalogo comun.</h2>
+        </div>
+
+        <div class="ritual-grid">
+          <article class="ritual-card" data-reveal>
+            <strong>Solar Reset</strong>
+            <p>Facial restaurativo para textura, hidratacion y pausa mental.</p>
+          </article>
+          <article class="ritual-card" data-reveal>
+            <strong>Calm Layer</strong>
+            <p>Ritual de barrera, masaje y respiracion guiada.</p>
+          </article>
+          <article class="ritual-card" data-reveal>
+            <strong>Golden Lift</strong>
+            <p>Sesión enfocada en luminosidad, tono y una experiencia premium de cuidado.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="espacio">
+      <div class="container space-grid">
+        <div class="space-visual" data-reveal>
+          <div class="room-card"></div>
+        </div>
+        <div class="space-copy" data-reveal>
+          <span class="eyebrow">El espacio</span>
+          <h2>Una marca que transmite calma desde la primera pantalla.</h2>
+          <p>
+            Esta demo usa una composicion mas suave, bloques redondeados, aire visual y textos cortos para que el
+            sitio se sienta tan cuidado como el servicio que vende.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section booking" id="agenda">
+      <div class="container booking-panel" data-reveal>
+        <div>
+          <span class="eyebrow">Agenda</span>
+          <h2>Reserva una sesion en minutos.</h2>
+        </div>
+        <a class="button" href="mailto:booking@solarawellness.demo">Reservar ritual</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Demo conceptual creada para portafolio. Marca ficticia para mostrar direccion visual, reservas y tono de marca.</p>
+      <a href="../../index.html">Volver al portafolio</a>
+    </div>
+  </footer>
+
+  <script src="../demo-shared.js"></script>
+</body>
+</html>

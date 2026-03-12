@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Nativo Cafe es una demo conceptual para portafolio: cafetería de especialidad con brunch, tostado propio y experiencia editorial."
+  >
+  <title>Nativo Cafe | Specialty Coffee & Brunch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio">Nativo Cafe</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="#historia">Historia</a>
+        <a href="#menu">Menu</a>
+        <a href="#espacio">Espacio</a>
+        <a href="#reserva">Reserva</a>
+      </nav>
+      <a class="button button-outline" href="#reserva">Reservar mesa</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal>
+          <span class="eyebrow">Specialty coffee & slow brunch</span>
+          <h1>Una cafetería que mezcla grano honesto, cocina ligera y una atmósfera que invita a quedarse.</h1>
+          <p>
+            Nativo Cafe tuesta lotes pequeños, trabaja productores locales y sirve un brunch de temporada en un
+            espacio que se siente tan bien como sabe.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#menu">Ver menu</a>
+            <a class="button button-outline" href="#historia">Nuestra historia</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-reveal>
+          <div class="hero-panel hero-panel-main">
+            <span>Tostado semanal</span>
+            <strong>House Blend</strong>
+            <p>Chocolate oscuro, caramelo tostado y final cítrico.</p>
+          </div>
+
+          <div class="hero-cup" aria-hidden="true">
+            <div class="latte-art"></div>
+          </div>
+
+          <div class="hero-panel hero-panel-side">
+            <span>Brunch de temporada</span>
+            <strong>08:00 - 15:00</strong>
+            <p>Pan artesanal, huevos suaves y platos hechos al momento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats section">
+      <div class="container stats-grid" data-reveal>
+        <article>
+          <strong data-count="7">0</strong>
+          <span>años refinando la experiencia</span>
+        </article>
+        <article>
+          <strong data-count="18">0</strong>
+          <span>bebidas y platos de firma</span>
+        </article>
+        <article>
+          <strong data-count="4">0</strong>
+          <span>orígenes disponibles por temporada</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section story" id="historia">
+      <div class="container split-grid">
+        <div class="story-card visual-card" data-reveal>
+          <div class="room-scene">
+            <div class="scene-lamp"></div>
+            <div class="scene-table"></div>
+            <div class="scene-window"></div>
+          </div>
+        </div>
+
+        <div class="story-copy" data-reveal>
+          <span class="eyebrow">Nuestra historia</span>
+          <h2>Café de especialidad con ritmo humano.</h2>
+          <p>
+            Nacimos como una barra pequeña enfocada en extraer bien. Con el tiempo sumamos cocina, panadería artesanal
+            y un espacio pensado para reuniones tranquilas, trabajo ligero y desayunos largos.
+          </p>
+          <p>
+            El resultado es una marca con estética cuidada, servicio amable y una operación que se siente consistente
+            desde la primera taza hasta el último plato.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section menu-section" id="menu">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <span class="eyebrow">Signature menu</span>
+          <h2>Platos y bebidas construidos para volver.</h2>
+        </div>
+
+        <div class="menu-grid">
+          <article class="menu-card" data-reveal>
+            <span>Bebida</span>
+            <h3>Flat White Nativo</h3>
+            <p>Espresso de house blend, leche texturizada y acabado de panela.</p>
+          </article>
+          <article class="menu-card" data-reveal>
+            <span>Bebida</span>
+            <h3>Cold Brew Citrus</h3>
+            <p>Infusión larga con naranja deshidratada y notas a cacao.</p>
+          </article>
+          <article class="menu-card" data-reveal>
+            <span>Brunch</span>
+            <h3>Toast de ricotta</h3>
+            <p>Pan de masa madre, ricotta batida, miel tibia y avellanas.</p>
+          </article>
+          <article class="menu-card" data-reveal>
+            <span>Brunch</span>
+            <h3>Huevos de la casa</h3>
+            <p>Huevos suaves, mantequilla de hierbas y papas doradas.</p>
+          </article>
+          <article class="menu-card" data-reveal>
+            <span>Pastelería</span>
+            <h3>Roll de cardamomo</h3>
+            <p>Masa hojaldrada con mantequilla tostada y glaseado ligero.</p>
+          </article>
+          <article class="menu-card" data-reveal>
+            <span>Retail</span>
+            <h3>Bolsas para llevar</h3>
+            <p>Microlotes seleccionados, molido a pedido y asesoría de método.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experience" id="espacio">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <span class="eyebrow">El espacio</span>
+          <h2>Diseñado para mañanas lentas, reuniones pequeñas y tardes largas.</h2>
+        </div>
+
+        <div class="experience-grid">
+          <article class="experience-card" data-reveal>
+            <strong>Barra abierta</strong>
+            <p>El servicio se construye frente a ti: molienda, extracción y conversación real.</p>
+          </article>
+          <article class="experience-card" data-reveal>
+            <strong>Mesas compartidas</strong>
+            <p>Ideal para trabajo ligero, reuniones breves o clientes que llegan con laptop.</p>
+          </article>
+          <article class="experience-card" data-reveal>
+            <strong>Eventos privados</strong>
+            <p>Catas, brunch de marca y encuentros pequeños con menú curado.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reservation" id="reserva">
+      <div class="container reservation-panel" data-reveal>
+        <div>
+          <span class="eyebrow">Reserva</span>
+          <h2>Abierto de lunes a domingo.</h2>
+          <p>
+            Reserva para brunch, catas o reuniones pequeñas. Esta demo muestra cómo se vería una llamada a la acción
+            clara para un negocio real.
+          </p>
+        </div>
+        <div class="reservation-meta">
+          <strong>Zona 10, Ciudad de Guatemala</strong>
+          <span>08:00 - 18:00</span>
+          <a class="button" href="mailto:reservas@nativocafe.demo">Solicitar reserva</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Demo conceptual para portafolio. Negocio ficticio creado para mostrar diseño web profesional.</p>
+      <a href="../../index.html">Volver al portafolio</a>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Blackline Auto es una demo conceptual para portafolio: detailing premium, protección cerámica y performance tuning con identidad visual agresiva."
+  >
+  <title>Blackline Auto | Detailing & Performance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="glow glow-a" aria-hidden="true"></div>
+  <div class="glow glow-b" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio">Blackline Auto</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#paquetes">Paquetes</a>
+        <a href="#agenda">Agenda</a>
+      </nav>
+      <a class="button" href="#agenda">Cotizar</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal>
+          <span class="eyebrow">Premium detailing / ceramic / performance</span>
+          <h1>Precisión estética y mecánica para autos que no pasan desapercibidos.</h1>
+          <p>
+            Blackline Auto combina detailing de alto nivel, protección cerámica, corrección de pintura y upgrades
+            visuales para clientes que cuidan cada detalle de su vehículo.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#paquetes">Ver paquetes</a>
+            <a class="button button-outline" href="#proceso">Cómo trabajamos</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-reveal>
+          <div class="dashboard-card">
+            <span>Studio monitor</span>
+            <strong>Live bay status</strong>
+            <div class="meter-grid">
+              <div><span>Paint</span><strong>98%</strong></div>
+              <div><span>Gloss</span><strong>94%</strong></div>
+              <div><span>Shield</span><strong>96%</strong></div>
+            </div>
+          </div>
+
+          <div class="car-stage" aria-hidden="true">
+            <div class="car-roof"></div>
+            <div class="car-body"></div>
+            <div class="wheel wheel-left"></div>
+            <div class="wheel wheel-right"></div>
+          </div>
+
+          <div class="spec-card">
+            <span>Popular setup</span>
+            <strong>Correction + Ceramic + Interior reset</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <span class="eyebrow">Servicios</span>
+          <h2>Tratamientos pensados para proteger, corregir y elevar presencia.</h2>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card" data-reveal>
+            <span>01</span>
+            <h3>Paint correction</h3>
+            <p>Remoción controlada de marcas, micro-rayas y defectos para recuperar profundidad.</p>
+          </article>
+          <article class="service-card" data-reveal>
+            <span>02</span>
+            <h3>Ceramic coating</h3>
+            <p>Capa protectora hidrofóbica con brillo sostenido y mantenimiento más simple.</p>
+          </article>
+          <article class="service-card" data-reveal>
+            <span>03</span>
+            <h3>Interior reset</h3>
+            <p>Limpieza técnica, tratamiento de cuero y acabados interiores de nivel showroom.</p>
+          </article>
+          <article class="service-card" data-reveal>
+            <span>04</span>
+            <h3>Visual upgrades</h3>
+            <p>Detalles exteriores, acabado en trim, calipers, luces y estética de presencia total.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="proceso">
+      <div class="container process-grid">
+        <div class="section-heading" data-reveal>
+          <span class="eyebrow">Proceso</span>
+          <h2>Diagnóstico claro, trabajo técnico y entrega impecable.</h2>
+        </div>
+
+        <div class="process-list">
+          <article class="process-item" data-reveal>
+            <strong>Scan inicial</strong>
+            <p>Inspección de pintura, interiores y objetivos del cliente antes de intervenir.</p>
+          </article>
+          <article class="process-item" data-reveal>
+            <strong>Corrección</strong>
+            <p>Trabajo en capas con foco en brillo, consistencia y reducción de imperfecciones.</p>
+          </article>
+          <article class="process-item" data-reveal>
+            <strong>Protección</strong>
+            <p>Sellado final y recomendaciones de mantenimiento para preservar resultado.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section packages" id="paquetes">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <span class="eyebrow">Paquetes</span>
+          <h2>Opciones listas para vender como un negocio real.</h2>
+        </div>
+
+        <div class="package-grid">
+          <article class="package-card" data-reveal>
+            <span>Essential</span>
+            <strong>Exterior Reset</strong>
+            <p>Lavado técnico, descontaminado, gloss finish y llantas.</p>
+            <em>Desde USD 120</em>
+          </article>
+          <article class="package-card featured" data-reveal>
+            <span>Most requested</span>
+            <strong>Blackline Signature</strong>
+            <p>Corrección, coating cerámico, interiores y detalle completo de entrega.</p>
+            <em>Desde USD 480</em>
+          </article>
+          <article class="package-card" data-reveal>
+            <span>Performance</span>
+            <strong>Track Ready</strong>
+            <p>Estética premium, protección y preparación visual para autos de alto perfil.</p>
+            <em>Desde USD 760</em>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section metrics">
+      <div class="container metrics-grid" data-reveal>
+        <article>
+          <strong data-count="180">0</strong>
+          <span>vehículos atendidos el último año</span>
+        </article>
+        <article>
+          <strong data-count="96">0</strong>
+          <span>clientes recurrentes o referidos</span>
+        </article>
+        <article>
+          <strong data-count="48">0</strong>
+          <span>horas dedicadas a tratamientos completos premium</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section schedule" id="agenda">
+      <div class="container schedule-panel" data-reveal>
+        <div>
+          <span class="eyebrow">Agenda</span>
+          <h2>Reserva tu evaluación y recibe propuesta en el mismo día.</h2>
+          <p>
+            Esta demo usa un cierre visual fuerte con una llamada a la acción concreta, ideal para servicios premium.
+          </p>
+        </div>
+        <div class="schedule-actions">
+          <a class="button" href="mailto:booking@blacklineauto.demo">Agendar inspección</a>
+          <a class="button button-outline" href="../../index.html">Volver al portafolio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Demo conceptual para portafolio. Negocio ficticio creado para mostrar ejecución visual de alto contraste.</p>
+      <a href="../../index.html">Volver al portafolio</a>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

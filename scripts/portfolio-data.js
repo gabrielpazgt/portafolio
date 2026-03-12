@@ -2,7 +2,7 @@ window.portfolioData = {
   name: "Gabriel Paz",
   displayName: "Gabo Developer",
   brandName: "Gabo Developer",
-  role: "Desarrollador web",
+  role: "Diseno y desarrollo paginas web",
   email: "",
   contactFormEndpoint: "https://formspree.io/f/mojkdblr",
   whatsapp: "50257219373",

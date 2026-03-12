@@ -1366,6 +1366,12 @@ textarea {
   min-width: 11.75rem;
 }
 
+.submit-button:disabled {
+  cursor: wait;
+  opacity: 0.76;
+  transform: none;
+}
+
 .form-note {
   max-width: 28ch;
   margin: 0;
@@ -1378,6 +1384,19 @@ textarea {
   min-height: 1.5rem;
   margin: 0;
   color: var(--accent-alt-strong);
+  transition: color var(--transition);
+}
+
+.form-status.is-loading {
+  color: var(--muted-strong);
+}
+
+.form-status.is-success {
+  color: var(--accent-alt-strong);
+}
+
+.form-status.is-error {
+  color: #ff9d9d;
 }
 
 .site-footer {

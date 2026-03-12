@@ -56,9 +56,10 @@ Antes de publicarlo, te conviene revisar estos puntos:
 
 1. Edita `scripts/portfolio-data.js`.
 2. Completa `email` con tu correo real.
-3. Verifica `brandName`, `role`, `whatsapp`, `github`, `linkedin` y `cv`.
-4. Ajusta textos del `index.html` si quieres enfocar mejor tu propuesta.
-5. Sustituye demos conceptuales por proyectos reales cuando quieras mostrar trabajo final.
+3. Si vas a usar formulario real, agrega tu endpoint en `contactFormEndpoint`.
+4. Verifica `brandName`, `role`, `whatsapp`, `github`, `linkedin` y `cv`.
+5. Ajusta textos del `index.html` si quieres enfocar mejor tu propuesta.
+6. Sustituye demos conceptuales por proyectos reales cuando quieras mostrar trabajo final.
 
 ## 💻 Cómo verlo localmente
 
@@ -136,9 +137,31 @@ https://gabrielpazgt.github.io/portafolio/
 ## ✅ Recomendaciones antes de publicar
 
 - Agrega tu correo real en `scripts/portfolio-data.js`.
+- Si usarás formulario directo, configura `contactFormEndpoint`.
 - Revisa que los enlaces de LinkedIn y GitHub sean los definitivos.
 - Comprueba que `cv.html` y las rutas dentro de `demos/` abran correctamente.
 - Haz una última revisión visual en desktop y mobile.
+
+## 📧 Conectar el formulario de contacto
+
+La forma más simple para este proyecto es usar `Formspree`, porque funciona bien con sitios estáticos en GitHub Pages.
+
+1. Crea un formulario en Formspree.
+2. Copia el endpoint que te entregue, algo como:
+
+```text
+https://formspree.io/f/tu_codigo
+```
+
+3. Pégalo en `scripts/portfolio-data.js`:
+
+```js
+contactFormEndpoint: "https://formspree.io/f/tu_codigo",
+```
+
+4. Publica de nuevo el sitio con `git push origin main`.
+
+Si `contactFormEndpoint` está vacío, el portafolio usa el modo actual de `mailto` como fallback.
 
 ## 📬 Contacto
 

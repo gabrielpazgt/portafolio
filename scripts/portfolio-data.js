@@ -4,6 +4,7 @@ window.portfolioData = {
   brandName: "Gabo Developer",
   role: "Frontend Developer",
   email: "",
+  contactFormEndpoint: "",
   whatsapp: "50257219373",
   github: "https://github.com/gabrielpaz",
   linkedin: "https://www.linkedin.com/in/gabriel-paz-gapg/",

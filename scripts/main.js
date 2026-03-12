@@ -8,6 +8,7 @@ const navLinks = siteNav ? [...siteNav.querySelectorAll('a[href^="#"]')] : [];
 const revealItems = document.querySelectorAll("[data-reveal]");
 const contactForm = document.querySelector(".contact-form");
 const formStatus = document.querySelector(".form-status");
+const submitButton = contactForm ? contactForm.querySelector(".submit-button") : null;
 const trackedSections = navLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
@@ -55,6 +56,32 @@ const bindLinks = () => {
 
     node.setAttribute("href", href);
   });
+};
+
+const setFormStatus = (message, tone = "") => {
+  if (!formStatus) {
+    return;
+  }
+
+  formStatus.textContent = message;
+  formStatus.classList.remove("is-error", "is-success", "is-loading");
+
+  if (tone) {
+    formStatus.classList.add(`is-${tone}`);
+  }
+};
+
+const setFormPending = (isPending) => {
+  if (!submitButton) {
+    return;
+  }
+
+  submitButton.disabled = isPending;
+  submitButton.textContent = isPending ? "Enviando..." : "Enviar consulta";
+};
+
+const getContactFormEndpoint = () => {
+  return String(portfolioData.contactFormEndpoint || "").trim();
 };
 
 const revealObserver = new IntersectionObserver(
@@ -137,18 +164,71 @@ const setupContactForm = () => {
     return;
   }
 
-  contactForm.addEventListener("submit", (event) => {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    formData.append("source", window.location.href);
+
+    const endpoint = getContactFormEndpoint();
+
+    if (endpoint) {
+      try {
+        setFormPending(true);
+        setFormStatus("Enviando consulta...", "loading");
+
+        const response = await fetch(endpoint, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        if (!response.ok) {
+          let errorMessage =
+            "No pude enviar el formulario en este momento. Intenta de nuevo en un rato o escríbeme por WhatsApp.";
+
+          try {
+            const responseData = await response.json();
+
+            if (Array.isArray(responseData.errors) && responseData.errors.length) {
+              errorMessage = responseData.errors
+                .map((entry) => entry.message)
+                .filter(Boolean)
+                .join(" ");
+            }
+          } catch {
+            // If the response body is not JSON, keep the default message.
+          }
+
+          setFormStatus(errorMessage, "error");
+          return;
+        }
+
+        contactForm.reset();
+        setFormStatus("Gracias. Tu mensaje ya fue enviado y te responderé pronto.", "success");
+        return;
+      } catch {
+        setFormStatus(
+          "No pude conectar el formulario. Intenta de nuevo en un rato o escríbeme por WhatsApp.",
+          "error"
+        );
+        return;
+      } finally {
+        setFormPending(false);
+      }
+    }
 
     const email = (portfolioData.email || "").trim();
 
     if (!email) {
-      formStatus.textContent =
+      setFormStatus(
         "Por ahora puedes escribirme por WhatsApp o LinkedIn mientras termino de conectar el correo directo.";
+      );
       return;
     }
 
-    const formData = new FormData(contactForm);
     const name = String(formData.get("name") || "").trim();
     const senderEmail = String(formData.get("email") || "").trim();
     const project = String(formData.get("project") || "").trim();
@@ -167,7 +247,7 @@ const setupContactForm = () => {
     );
 
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-    formStatus.textContent = "Se abrio tu cliente de correo con el mensaje listo para enviar.";
+    setFormStatus("Se abrio tu cliente de correo con el mensaje listo para enviar.", "success");
     contactForm.reset();
   });
 };

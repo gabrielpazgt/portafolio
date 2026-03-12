@@ -9,6 +9,8 @@ const revealItems = document.querySelectorAll("[data-reveal]");
 const contactForm = document.querySelector(".contact-form");
 const formStatus = document.querySelector(".form-status");
 const submitButton = contactForm ? contactForm.querySelector(".submit-button") : null;
+const aboutCarousels = [...document.querySelectorAll("[data-about-carousel]")];
+const processFlows = [...document.querySelectorAll("[data-process-flow]")];
 const trackedSections = navLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
@@ -29,8 +31,6 @@ const resolveLink = (key) => {
   switch (key) {
     case "linkedin":
       return portfolioData.linkedin || "";
-    case "github":
-      return portfolioData.github || "";
     case "cv":
       return portfolioData.cv || "";
     case "whatsapp":
@@ -72,12 +72,19 @@ const setFormStatus = (message, tone = "") => {
 };
 
 const setFormPending = (isPending) => {
-  if (!submitButton) {
+  if (!contactForm) {
     return;
   }
 
-  submitButton.disabled = isPending;
-  submitButton.textContent = isPending ? "Enviando..." : "Enviar consulta";
+  contactForm.classList.toggle("is-pending", isPending);
+
+  contactForm.querySelectorAll("input, select, textarea, button").forEach((control) => {
+    control.disabled = isPending;
+  });
+
+  if (submitButton) {
+    submitButton.textContent = isPending ? "Enviando..." : "Enviar mensaje";
+  }
 };
 
 const getContactFormEndpoint = () => {
@@ -164,8 +171,173 @@ const setupContactForm = () => {
     return;
   }
 
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const phonePattern = /^\+?[0-9\s().-]{7,20}$/;
+  const touchedFields = new Set();
+  const fields = {
+    name: {
+      control: contactForm.elements.namedItem("name"),
+      wrapper: contactForm.querySelector('[data-form-field="name"]'),
+      errorNode: contactForm.querySelector("#contact-error-name"),
+      validate(value) {
+        if (!value || value.length < 2) {
+          return "Por favor escribe tu nombre.";
+        }
+
+        return "";
+      }
+    },
+    email: {
+      control: contactForm.elements.namedItem("email"),
+      wrapper: contactForm.querySelector('[data-form-field="email"]'),
+      errorNode: contactForm.querySelector("#contact-error-email"),
+      validate(value) {
+        if (!value) {
+          return "Por favor escribe tu correo.";
+        }
+
+        if (!emailPattern.test(value)) {
+          return "Escribe un correo v\u00e1lido.";
+        }
+
+        return "";
+      }
+    },
+    phone: {
+      control: contactForm.elements.namedItem("phone"),
+      wrapper: contactForm.querySelector('[data-form-field="phone"]'),
+      errorNode: contactForm.querySelector("#contact-error-phone"),
+      validate(value) {
+        if (!value) {
+          return "";
+        }
+
+        const digits = value.replace(/\D/g, "");
+
+        if (!phonePattern.test(value) || digits.length < 7) {
+          return "Revisa este n\u00famero de contacto.";
+        }
+
+        return "";
+      }
+    },
+    project: {
+      control: contactForm.elements.namedItem("project"),
+      wrapper: contactForm.querySelector('[data-form-field="project"]'),
+      errorNode: contactForm.querySelector("#contact-error-project"),
+      validate(value) {
+        if (!value) {
+          return "Selecciona el tipo de proyecto.";
+        }
+
+        return "";
+      }
+    },
+    message: {
+      control: contactForm.elements.namedItem("message"),
+      wrapper: contactForm.querySelector('[data-form-field="message"]'),
+      errorNode: contactForm.querySelector("#contact-error-message"),
+      validate(value) {
+        if (!value || value.length < 20) {
+          return "Cu\u00e9ntame un poco m\u00e1s sobre lo que necesitas.";
+        }
+
+        return "";
+      }
+    }
+  };
+
+  const getFieldValue = (key) => String(fields[key].control?.value || "").trim();
+
+  const setFieldState = (key, error = "", showError = touchedFields.has(key)) => {
+    const field = fields[key];
+
+    if (!field || !field.control || !field.wrapper || !field.errorNode) {
+      return;
+    }
+
+    const value = getFieldValue(key);
+    const isFilled = value.length > 0;
+    const showValid = !error && isFilled && touchedFields.has(key);
+
+    field.wrapper.classList.toggle("is-error", Boolean(error) && showError);
+    field.wrapper.classList.toggle("is-valid", showValid);
+    field.control.setAttribute("aria-invalid", String(Boolean(error) && showError));
+    field.errorNode.textContent = showError ? error : "";
+  };
+
+  const validateField = (key, showError = touchedFields.has(key)) => {
+    const field = fields[key];
+
+    if (!field || typeof field.validate !== "function") {
+      return true;
+    }
+
+    const error = field.validate(getFieldValue(key));
+    setFieldState(key, error, showError);
+    return !error;
+  };
+
+  const clearFieldStates = () => {
+    Object.keys(fields).forEach((key) => {
+      setFieldState(key, "", false);
+    });
+  };
+
+  const focusFirstInvalidField = () => {
+    const invalidKey = Object.keys(fields).find((key) => !validateField(key, true));
+
+    if (invalidKey && fields[invalidKey].control) {
+      fields[invalidKey].control.focus();
+    }
+  };
+
+  Object.entries(fields).forEach(([key, field]) => {
+    if (!field.control) {
+      return;
+    }
+
+    const clearStatusIfNeeded = () => {
+      if (formStatus.textContent && !contactForm.classList.contains("is-pending")) {
+        setFormStatus("");
+      }
+    };
+
+    field.control.addEventListener("blur", () => {
+      touchedFields.add(key);
+      validateField(key, true);
+    });
+
+    field.control.addEventListener("input", () => {
+      clearStatusIfNeeded();
+
+      if (touchedFields.has(key)) {
+        validateField(key, true);
+      }
+    });
+
+    field.control.addEventListener("change", () => {
+      clearStatusIfNeeded();
+
+      if (touchedFields.has(key) || field.control.tagName === "SELECT") {
+        touchedFields.add(key);
+        validateField(key, true);
+      }
+    });
+  });
+
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+
+    Object.keys(fields).forEach((key) => touchedFields.add(key));
+
+    const isFormValid = Object.keys(fields).every((key) => validateField(key, true));
+
+    if (!isFormValid) {
+      setFormStatus("Revisa los campos marcados y vuelve a intentarlo.", "error");
+      focusFirstInvalidField();
+      return;
+    }
 
     const formData = new FormData(contactForm);
     formData.append("source", window.location.href);
@@ -175,7 +347,7 @@ const setupContactForm = () => {
     if (endpoint) {
       try {
         setFormPending(true);
-        setFormStatus("Enviando consulta...", "loading");
+        setFormStatus("Enviando...", "loading");
 
         const response = await fetch(endpoint, {
           method: "POST",
@@ -187,7 +359,7 @@ const setupContactForm = () => {
 
         if (!response.ok) {
           let errorMessage =
-            "No pude enviar el formulario en este momento. Intenta de nuevo en un rato o escríbeme por WhatsApp.";
+            "No pude enviar el mensaje en este momento. Intenta de nuevo en un rato o escr\u00edbeme por WhatsApp.";
 
           try {
             const responseData = await response.json();
@@ -207,11 +379,13 @@ const setupContactForm = () => {
         }
 
         contactForm.reset();
-        setFormStatus("Gracias. Tu mensaje ya fue enviado y te responderé pronto.", "success");
+        touchedFields.clear();
+        clearFieldStates();
+        setFormStatus("Gracias por escribirme. Te responder\u00e9 pronto.", "success");
         return;
       } catch {
         setFormStatus(
-          "No pude conectar el formulario. Intenta de nuevo en un rato o escríbeme por WhatsApp.",
+          "No pude conectar el formulario. Intenta de nuevo en un rato o escr\u00edbeme por WhatsApp.",
           "error"
         );
         return;
@@ -224,7 +398,8 @@ const setupContactForm = () => {
 
     if (!email) {
       setFormStatus(
-        "Por ahora puedes escribirme por WhatsApp o LinkedIn mientras termino de conectar el correo directo."
+        "Por ahora puedes escribirme por WhatsApp o LinkedIn mientras termino de conectar el correo directo.",
+        "error"
       );
       return;
     }
@@ -240,7 +415,7 @@ const setupContactForm = () => {
       [
         `Nombre: ${name}`,
         `Correo: ${senderEmail}`,
-        `Telefono: ${phone}`,
+        `Tel\u00e9fono: ${phone}`,
         `Proyecto: ${project}`,
         "",
         "Mensaje:",
@@ -249,9 +424,13 @@ const setupContactForm = () => {
     );
 
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-    setFormStatus("Se abrio tu cliente de correo con el mensaje listo para enviar.", "success");
     contactForm.reset();
+    touchedFields.clear();
+    clearFieldStates();
+    setFormStatus("Se abri\u00f3 tu cliente de correo con el mensaje listo para enviar.", "success");
   });
+
+  clearFieldStates();
 };
 
 const setupExpandCards = () => {
@@ -278,12 +457,261 @@ const setupExpandCards = () => {
   });
 };
 
+const setupAboutCarousels = () => {
+  if (!aboutCarousels.length) {
+    return;
+  }
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  aboutCarousels.forEach((carousel) => {
+    const viewport = carousel.querySelector(".about-carousel-viewport");
+    const track = carousel.querySelector(".about-track");
+    const slides = [...carousel.querySelectorAll("[data-about-slide]")];
+    const dots = [...carousel.querySelectorAll("[data-about-dot]")];
+
+    if (!viewport || !track || slides.length < 2) {
+      return;
+    }
+
+    let activeIndex = 0;
+    let timerId = 0;
+    let isInteracting = false;
+
+    const syncCarousel = () => {
+      const offset = viewport.clientWidth * activeIndex;
+      track.style.transform = `translate3d(${-offset}px, 0, 0)`;
+
+      slides.forEach((slide, index) => {
+        const isActive = index === activeIndex;
+        slide.classList.toggle("is-active", isActive);
+        slide.setAttribute("aria-hidden", String(!isActive));
+      });
+
+      dots.forEach((dot, index) => {
+        const isActive = index === activeIndex;
+        dot.classList.toggle("is-active", isActive);
+        dot.setAttribute("aria-pressed", String(isActive));
+      });
+    };
+
+    const setSlide = (nextIndex) => {
+      activeIndex = (nextIndex + slides.length) % slides.length;
+      syncCarousel();
+    };
+
+    const stopAutoplay = () => {
+      if (!timerId) {
+        return;
+      }
+
+      window.clearInterval(timerId);
+      timerId = 0;
+    };
+
+    const startAutoplay = () => {
+      if (prefersReducedMotion.matches || isInteracting) {
+        return;
+      }
+
+      stopAutoplay();
+      timerId = window.setInterval(() => {
+        setSlide(activeIndex + 1);
+      }, 5000);
+    };
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        setSlide(index);
+
+        if (!isInteracting) {
+          startAutoplay();
+        }
+      });
+    });
+
+    carousel.addEventListener("mouseenter", () => {
+      isInteracting = true;
+      stopAutoplay();
+    });
+    carousel.addEventListener("mouseleave", () => {
+      isInteracting = false;
+      startAutoplay();
+    });
+    carousel.addEventListener("focusin", () => {
+      isInteracting = true;
+      stopAutoplay();
+    });
+    carousel.addEventListener("focusout", (event) => {
+      if (!carousel.contains(event.relatedTarget)) {
+        isInteracting = false;
+        startAutoplay();
+      }
+    });
+
+    window.addEventListener("resize", syncCarousel);
+
+    if (typeof prefersReducedMotion.addEventListener === "function") {
+      prefersReducedMotion.addEventListener("change", () => {
+        syncCarousel();
+
+        if (prefersReducedMotion.matches) {
+          stopAutoplay();
+        } else {
+          startAutoplay();
+        }
+      });
+    }
+
+    setSlide(0);
+    startAutoplay();
+  });
+};
+
+const setupProcessFlows = () => {
+  if (!processFlows.length) {
+    return;
+  }
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  processFlows.forEach((flow) => {
+    const viewport = flow.querySelector(".process-stage-window");
+    const track = flow.querySelector(".process-stage-track");
+    const steps = [...flow.querySelectorAll("[data-process-trigger]")];
+    const panels = [...flow.querySelectorAll("[data-process-panel]")];
+    const dots = [...flow.querySelectorAll("[data-process-dot]")];
+    const previousButton = flow.querySelector("[data-process-prev]");
+    const nextButton = flow.querySelector("[data-process-next]");
+    const progressFill = flow.querySelector(".process-progress-fill");
+    const currentNode = flow.querySelector("[data-process-current]");
+
+    if (!viewport || !track || !steps.length || steps.length !== panels.length) {
+      return;
+    }
+
+    let activeIndex = 0;
+
+    const syncFlow = (shouldFocus = false) => {
+      const offset = viewport.clientWidth * activeIndex;
+      const progress = steps.length > 1 ? (activeIndex / (steps.length - 1)) * 100 : 100;
+
+      track.style.transform = `translate3d(${-offset}px, 0, 0)`;
+
+      if (progressFill) {
+        progressFill.style.width = `${progress}%`;
+      }
+
+      if (currentNode) {
+        currentNode.textContent = String(activeIndex + 1).padStart(2, "0");
+      }
+
+      steps.forEach((step, index) => {
+        const isActive = index === activeIndex;
+
+        step.classList.toggle("is-active", isActive);
+        step.setAttribute("aria-selected", String(isActive));
+        step.setAttribute("tabindex", isActive ? "0" : "-1");
+      });
+
+      panels.forEach((panel, index) => {
+        const isActive = index === activeIndex;
+        panel.classList.toggle("is-active", isActive);
+        panel.setAttribute("aria-hidden", String(!isActive));
+      });
+
+      dots.forEach((dot, index) => {
+        const isActive = index === activeIndex;
+        dot.classList.toggle("is-active", isActive);
+        dot.setAttribute("aria-pressed", String(isActive));
+      });
+
+      const activeStep = steps[activeIndex];
+
+      if (activeStep && window.innerWidth <= 860) {
+        activeStep.scrollIntoView({
+          behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+          block: "nearest",
+          inline: "center"
+        });
+      }
+
+      if (shouldFocus && activeStep) {
+        activeStep.focus();
+      }
+    };
+
+    const setStep = (nextIndex, shouldFocus = false) => {
+      activeIndex = (nextIndex + steps.length) % steps.length;
+      syncFlow(shouldFocus);
+    };
+
+    steps.forEach((step, index) => {
+      step.addEventListener("click", () => {
+        setStep(index);
+      });
+
+      step.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+          event.preventDefault();
+          setStep(index + 1, true);
+        }
+
+        if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+          event.preventDefault();
+          setStep(index - 1, true);
+        }
+
+        if (event.key === "Home") {
+          event.preventDefault();
+          setStep(0, true);
+        }
+
+        if (event.key === "End") {
+          event.preventDefault();
+          setStep(steps.length - 1, true);
+        }
+      });
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        setStep(index);
+      });
+    });
+
+    if (previousButton) {
+      previousButton.addEventListener("click", () => {
+        setStep(activeIndex - 1);
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener("click", () => {
+        setStep(activeIndex + 1);
+      });
+    }
+
+    window.addEventListener("resize", syncFlow);
+
+    if (typeof prefersReducedMotion.addEventListener === "function") {
+      prefersReducedMotion.addEventListener("change", () => {
+        syncFlow();
+      });
+    }
+
+    setStep(0);
+  });
+};
+
 bindFields();
 bindLinks();
 revealItems.forEach((item) => revealObserver.observe(item));
 setupNavigation();
 setupContactForm();
 setupExpandCards();
+setupAboutCarousels();
+setupProcessFlows();
 updateScrollUi();
 
 window.addEventListener("scroll", updateScrollUi, { passive: true });

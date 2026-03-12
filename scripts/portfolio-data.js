@@ -6,7 +6,6 @@ window.portfolioData = {
   email: "",
   contactFormEndpoint: "https://formspree.io/f/mojkdblr",
   whatsapp: "50257219373",
-  github: "https://github.com/gabrielpaz",
   linkedin: "https://www.linkedin.com/in/gabriel-paz-gapg/",
   cv: "./Gabriel-Paz-CV.pdf",
   location: "Guatemala",

@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
   <link rel="stylesheet" href="./styles/main.css">
@@ -51,93 +51,25 @@
 
   <main>
     <section class="hero section" id="inicio">
+      <div class="hero-backdrop" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-dots" aria-hidden="true"></div>
+
       <div class="container hero-grid">
         <div class="hero-copy" data-reveal>
-          <span class="eyebrow"><span data-field="name">Gabriel Paz</span> / Paginas para negocios, marcas y personas reales</span>
-          <h1>Si tu pagina se siente fria, confusa o muy generica, yo te ayudo a volverla clara y con personalidad.</h1>
+          <h1>Hola, soy <span>Gabo.</span></h1>
           <p class="hero-text">
-            Trabajo con personas que no quieren perderse entre tecnicismos. Me cuentas tu idea como la tengas y yo la
-            convierto en una pagina que se vea bien, se entienda rapido y se sienta tuya de verdad.
+            Diseno y desarrollo paginas web claras, cuidadas y faciles de compartir para negocios, marcas personales
+            y proyectos reales.
           </p>
 
           <div class="hero-actions">
             <a class="button" href="#trabajos">Ver proyectos</a>
             <a class="button button-secondary" data-link="whatsapp" href="https://wa.me/50257219373" target="_blank" rel="noreferrer">Cotizar</a>
-            <a class="button button-tertiary" data-link="cv" href="./Gabriel-Paz-CV.pdf" download="Gabriel-Paz-CV.pdf">Descargar CV</a>
-          </div>
-
-          <div class="hero-links" aria-label="Perfiles profesionales">
-            <a data-link="linkedin" href="https://www.linkedin.com/in/gabriel-paz-gapg/" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            <a data-link="github" href="https://github.com/gabrielpaz" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-            <a data-link="whatsapp" href="https://wa.me/50257219373" target="_blank" rel="noreferrer">
-              WhatsApp
-            </a>
-          </div>
-
-          <div class="hero-indicators">
-            <article class="indicator-card">
-              <strong>Que no te de pena compartirla</strong>
-              <span>La idea es que mandes tu link con confianza y que la pagina hable bien de ti.</span>
-            </article>
-            <article class="indicator-card">
-              <strong>Que se entienda en segundos</strong>
-              <span>Si alguien entra y no entiende rapido de que va tu negocio, algo hay que mejorar.</span>
-            </article>
-            <article class="indicator-card">
-              <strong>Que se vea bien en el telefono</strong>
-              <span>Mucha gente te va a ver desde el celular. Para mi eso no es opcional, es base.</span>
-            </article>
-            <article class="indicator-card">
-              <strong>Que escribirte sea facil</strong>
-              <span>Todo debe llevar a algo simple: que la persona entienda, confie y te pueda contactar.</span>
-            </article>
           </div>
         </div>
 
         <div class="hero-visual" data-reveal>
-          <div class="hero-orbit hero-orbit-a"></div>
-          <div class="hero-orbit hero-orbit-b"></div>
-
-          <article class="glass-panel hero-profile-card">
-            <div class="hero-profile-top">
-              <div class="hero-portrait">
-                <img src="./gabriel-foto.jpg" alt="Retrato de Gabriel Paz">
-              </div>
-              <div>
-                <span class="panel-tag">Disponible para colaborar</span>
-                <h2 data-field="name">Gabriel Paz</h2>
-                <p data-field="role">Diseno y desarrollo paginas web</p>
-              </div>
-            </div>
-
-            <p class="hero-profile-text">
-              Soy Gabriel. Me gustan las paginas limpias, con buen gusto y sin ese aire de plantilla armada por salir
-              del paso. Si algo se siente frio o demasiado generico, prefiero rehacerlo.
-            </p>
-
-            <div class="hero-stack">
-              <span>Paginas para negocios</span>
-              <span>Portafolios</span>
-              <span>Landing pages</span>
-              <span>Paginas de servicios</span>
-              <span>Formularios</span>
-              <span>Version movil</span>
-            </div>
-
-            <div class="hero-profile-links">
-              <a class="inline-link" data-link="linkedin" href="https://www.linkedin.com/in/gabriel-paz-gapg/" target="_blank" rel="noreferrer">
-                Ver LinkedIn
-              </a>
-              <a class="inline-link" data-link="github" href="https://github.com/gabrielpaz" target="_blank" rel="noreferrer">
-                Ver GitHub
-              </a>
-            </div>
-          </article>
-
           <div class="hero-note-stack">
             <button class="hero-note-card is-open" type="button" data-expand-card aria-expanded="true">
               <span class="panel-tag">Lo que cuido</span>
@@ -157,6 +89,27 @@
               <p>Si me quieres ubicar rapido fuera del trabajo, por ahi va mi estilo y mi energia.</p>
             </button>
           </div>
+        </div>
+      </div>
+
+      <div class="container hero-bottom" data-reveal>
+        <div class="hero-contact-mini">
+          <span class="hero-contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+              <path d="M19.05 4.94A9.77 9.77 0 0 0 12.09 2C6.67 2 2.26 6.4 2.26 11.82c0 1.74.46 3.43 1.32 4.93L2 22l5.41-1.52a9.8 9.8 0 0 0 4.68 1.19h.01c5.42 0 9.82-4.4 9.82-9.82A9.76 9.76 0 0 0 19.05 4.94Zm-6.96 15.07h-.01a8.13 8.13 0 0 1-4.14-1.13l-.3-.18-3.21.9.86-3.13-.2-.32a8.16 8.16 0 0 1-1.25-4.33c0-4.5 3.66-8.16 8.17-8.16a8.1 8.1 0 0 1 5.78 2.39 8.11 8.11 0 0 1 2.39 5.78c0 4.5-3.66 8.18-8.16 8.18Zm4.47-6.11c-.24-.12-1.41-.69-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1-.37-1.91-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.68 2.56 4.08 3.59.57.25 1.02.39 1.37.5.58.18 1.1.15 1.51.09.46-.07 1.41-.58 1.61-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/>
+            </svg>
+          </span>
+          <span class="hero-contact-label">Hablemos por WhatsApp</span>
+          <a data-link="whatsapp" href="https://wa.me/50257219373" target="_blank" rel="noreferrer">+502 5721 9373</a>
+        </div>
+
+        <div class="hero-social-bar" aria-label="Perfiles profesionales">
+          <a data-link="linkedin" href="https://www.linkedin.com/in/gabriel-paz-gapg/" target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+          <a data-link="cv" href="./Gabriel-Paz-CV.pdf" download="Gabriel-Paz-CV.pdf">
+            CV
+          </a>
         </div>
       </div>
     </section>
@@ -480,22 +433,26 @@
       <div class="container about-grid">
         <div class="about-copy" data-reveal>
           <span class="eyebrow">Sobre mi</span>
-          <h2>No me interesa llenarte de palabras raras. Prefiero que tu pagina hable claro por ti.</h2>
+          <h2>Si lo puedes imaginar, lo puedo programar.</h2>
           <p>
-            Hay personas y negocios que solo necesitan algo bien hecho para empezar a mostrarse mejor: una pagina que
-            ordene lo que hacen, se vea bien y les de confianza al compartirla. Justo ahi es donde me gusta entrar.
+            Soy Gabo. Me dedico al desarrollo de software, pero tambien soy alguien que disfruta mucho la vida fuera
+            del trabajo. Soy un viciado del Counter-Strike, me encanta el anime, disfruto una buena serie y no le digo
+            que no a un domingo de pizza.
           </p>
           <p>
-            Tambien soy de los que creen que una pagina dice mucho de una persona. Si se ve descuidada, fria o igual a
-            todas, se nota. Por eso me gusta cuidar el detalle y buscar que todo tenga mas personalidad.
+            Tambien me gustan los planes con un poco de aventura; si incluyen botas y sombrero, probablemente ahi
+            estare. Me gusta ese equilibrio entre la tecnologia, los momentos tranquilos y las experiencias que se
+            vuelven recuerdos.
+          </p>
+          <p>
+            Valoro muchisimo a las personas que forman parte de mi vida. Tengo excelentes amigos y una familia hermosa
+            que me quiere, me cuida y me impulsa a seguir creciendo. Creo que al final eso tambien define quien soy:
+            alguien que suena, construye, disfruta y agradece.
           </p>
 
           <div class="about-links">
             <a class="inline-link" data-link="linkedin" href="https://www.linkedin.com/in/gabriel-paz-gapg/" target="_blank" rel="noreferrer">
               LinkedIn
-            </a>
-            <a class="inline-link" data-link="github" href="https://github.com/gabrielpaz" target="_blank" rel="noreferrer">
-              GitHub
             </a>
             <a class="inline-link" data-link="cv" href="./Gabriel-Paz-CV.pdf" download="Gabriel-Paz-CV.pdf">Descargar CV PDF</a>
           </div>
@@ -510,19 +467,35 @@
             </figcaption>
           </figure>
 
-          <div class="about-points">
-            <article>
-              <strong>Lo que busco</strong>
-              <span>Que veas tu pagina y pienses: "si, esto si me representa".</span>
-            </article>
-            <article>
-              <strong>Como trabajo</strong>
-              <span>Me cuentas la idea, la ordenamos juntos y la vamos aterrizando sin enredos.</span>
-            </article>
-            <article>
-              <strong>Lo que no me gusta</strong>
-              <span>Las paginas frias, confusas y hechas solo por salir del paso.</span>
-            </article>
+          <div class="about-points" data-about-carousel>
+            <div class="about-carousel-viewport">
+              <div class="about-track">
+                <article class="about-point-card" data-about-slide>
+                  <span class="about-point-index">01</span>
+                  <strong>Lo que busco</strong>
+                  <span>Que cuando veas tu pagina sientas que de verdad habla de ti, de tu marca y de lo que quieres transmitir.</span>
+                </article>
+                <article class="about-point-card" data-about-slide>
+                  <span class="about-point-index">02</span>
+                  <strong>Como trabajo</strong>
+                  <span>Me cuentas tu idea, la aterrizamos juntos y la transformamos en una pagina clara, moderna y funcional.</span>
+                </article>
+                <article class="about-point-card" data-about-slide>
+                  <span class="about-point-index">03</span>
+                  <strong>Lo que valoro</strong>
+                  <span>Disenos con personalidad, mensajes claros y sitios web hechos con intencion, no solo por salir del paso.</span>
+                </article>
+              </div>
+            </div>
+
+            <div class="about-carousel-meta">
+              <span class="about-carousel-label">Puntos clave</span>
+              <div class="about-carousel-dots" aria-label="Cambiar punto destacado">
+                <button class="about-carousel-dot is-active" type="button" data-about-dot="0" aria-label="Ver lo que busco" aria-pressed="true"></button>
+                <button class="about-carousel-dot" type="button" data-about-dot="1" aria-label="Ver como trabajo" aria-pressed="false"></button>
+                <button class="about-carousel-dot" type="button" data-about-dot="2" aria-label="Ver lo que valoro" aria-pressed="false"></button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -530,116 +503,478 @@
 
     <section class="skills section" id="habilidades">
       <div class="container">
-        <div class="section-heading" data-reveal>
-          <span class="eyebrow">Lo que cuido</span>
-          <h2>Cuando hago una pagina, estas son las cosas que no me gusta dejar al azar.</h2>
-          <p>
-            Para mi no se trata solo de que algo funcione. Se trata de que se vea bien, se entienda facil y te haga
-            sentir comodo al mostrarlo.
-          </p>
+        <div class="skills-hero">
+          <div class="section-heading skills-heading" data-reveal>
+            <span class="eyebrow">Lo que aporto</span>
+            <h2>Base tecnica, criterio visual y una forma de trabajo clara.</h2>
+            <p>
+              No solo construyo interfaces. Tambien ayudo a aterrizar ideas para convertirlas en sitios funcionales,
+              modernos y agradables de trabajar de inicio a fin.
+            </p>
+          </div>
+
+          <aside class="skills-intro-card" data-reveal>
+            <span class="panel-tag">En resumen</span>
+            <strong>Base tecnica para construir. Criterio visual para presentar. Cercania para trabajar sin drama.</strong>
+            <p>Me importa que el resultado se vea bien y que el proceso tambien se sienta claro de principio a fin.</p>
+          </aside>
         </div>
 
-        <div class="capability-grid">
-          <article class="capability-card" data-reveal>
-            <span>01</span>
-            <h3>Que se entienda rapido</h3>
-            <p>Que alguien entre y en pocos segundos capte que haces, para quien es y como puede contactarte.</p>
-          </article>
-          <article class="capability-card" data-reveal>
-            <span>02</span>
-            <h3>Que se sienta tuya</h3>
-            <p>No busco soltarte una plantilla mas. Quiero que tenga estilo y personalidad propia.</p>
-          </article>
-          <article class="capability-card" data-reveal>
-            <span>03</span>
-            <h3>Que te escriban facil</h3>
-            <p>Todo debe estar pensado para que dar el siguiente paso no se sienta complicado ni escondido.</p>
-          </article>
-          <article class="capability-card" data-reveal>
-            <span>04</span>
-            <h3>Que se vea bien en celular</h3>
-            <p>Si la version movil se siente descuidada, la pagina pierde fuerza. Eso para mi no pasa.</p>
-          </article>
-        </div>
+        <div class="skills-grid">
+          <article class="skills-card skills-card-tech" data-reveal>
+            <div class="skills-card-top">
+              <div class="skills-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                  <path d="M8 8 4 12l4 4"/>
+                  <path d="m16 8 4 4-4 4"/>
+                  <path d="m14 4-4 16"/>
+                </svg>
+              </div>
+              <div class="skills-card-copy">
+                <span class="panel-tag">Habilidades tecnicas</span>
+                <h3>Frontend moderno para sitios que se ven bien, se entienden rapido y se pueden escalar.</h3>
+                <p>
+                  Trabajo con Angular, React y tecnologias web modernas para construir interfaces limpias, responsivas
+                  y bien estructuradas, cuidando tanto la funcionalidad como la experiencia visual.
+                </p>
+              </div>
+            </div>
 
-        <div class="stack-board" data-reveal>
-          <article class="stack-card">
-            <span class="panel-tag">Lo que mas hago</span>
-            <div class="skill-cloud">
-              <span>Paginas para negocios</span>
-              <span>Portafolios</span>
-              <span>Landing pages</span>
-              <span>Paginas de servicios</span>
-              <span>Formularios</span>
-              <span>WhatsApp</span>
-              <span>Version movil</span>
-              <span>Buena presentacion</span>
+            <div class="skills-clusters" aria-label="Habilidades tecnicas">
+              <section class="skills-cluster">
+                <span class="skills-cluster-label">Frontend</span>
+                <div class="skills-pills">
+                  <span>Angular</span>
+                  <span>React</span>
+                  <span>TypeScript</span>
+                  <span>JavaScript</span>
+                </div>
+              </section>
+
+              <section class="skills-cluster">
+                <span class="skills-cluster-label">UI</span>
+                <div class="skills-pills">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>SCSS</span>
+                  <span>Tailwind</span>
+                  <span>Responsive Design</span>
+                  <span>UI Development</span>
+                </div>
+              </section>
+
+              <section class="skills-cluster">
+                <span class="skills-cluster-label">Integracion</span>
+                <div class="skills-pills">
+                  <span>APIs</span>
+                  <span>Control de versiones</span>
+                  <span>Componentes reutilizables</span>
+                  <span>Backend basico</span>
+                </div>
+              </section>
             </div>
           </article>
 
-          <article class="stack-card">
-            <span class="panel-tag">Con que lo trabajo</span>
-            <div class="skill-cloud">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-              <span>React</span>
-              <span>Angular</span>
-              <span>GitHub</span>
-              <span>Formspree</span>
-              <span>Responsive</span>
+          <article class="skills-card skills-card-human" data-reveal>
+            <div class="skills-card-top">
+              <div class="skills-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                  <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/>
+                  <path d="M8 10h.01"/>
+                  <path d="M12 10h.01"/>
+                  <path d="M16 10h.01"/>
+                </svg>
+              </div>
+              <div class="skills-card-copy">
+                <span class="panel-tag">Habilidades humanas</span>
+                <h3>La parte tecnica importa, pero tambien importa mucho como se vive el proceso.</h3>
+                <p>
+                  Me gusta trabajar con claridad, resolver problemas sin drama y mantener una comunicacion cercana para
+                  que el proyecto avance con confianza.
+                </p>
+              </div>
             </div>
-          </article>
 
-          <article class="stack-card">
-            <span class="panel-tag">Si me quieres ubicar rapido</span>
-            <div class="skill-cloud">
-              <span>Counter Strike</span>
-              <span>Anime</span>
-              <span>Playa</span>
-              <span>Botas</span>
-              <span>Sombrero</span>
-              <span>Buena vibra</span>
-              <span>Personalidad</span>
-              <span>Criterio visual</span>
+            <div class="skills-clusters skills-clusters-soft" aria-label="Habilidades personales">
+              <section class="skills-cluster">
+                <span class="skills-cluster-label">Comunicacion</span>
+                <div class="skills-pills">
+                  <span>Comunicacion clara</span>
+                  <span>Empatia</span>
+                  <span>Trabajo en equipo</span>
+                </div>
+              </section>
+
+              <section class="skills-cluster">
+                <span class="skills-cluster-label">Mentalidad</span>
+                <div class="skills-pills">
+                  <span>Creatividad</span>
+                  <span>Resolucion de problemas</span>
+                  <span>Adaptabilidad</span>
+                </div>
+              </section>
+
+              <section class="skills-cluster">
+                <span class="skills-cluster-label">Forma de trabajar</span>
+                <div class="skills-pills">
+                  <span>Organizacion</span>
+                  <span>Atencion al detalle</span>
+                  <span>Aprendizaje constante</span>
+                  <span>Compromiso con cada proyecto</span>
+                </div>
+              </section>
             </div>
           </article>
         </div>
+
+        <article class="skills-value" data-reveal>
+          <div class="skills-value-mark" aria-hidden="true">"</div>
+          <div class="skills-value-body">
+            <span class="panel-tag">Mi valor</span>
+            <h3>No solo busco desarrollar un sitio web que funcione bien, sino tambien hacer que el proceso sea claro, cercano y agradable.</h3>
+            <p>
+              Puedo ayudarte a convertir una idea en una pagina funcional, atractiva y con personalidad, cuidando
+              tanto la parte tecnica como la experiencia de trabajar juntos.
+            </p>
+            <p>
+              Desarrollo soluciones digitales, pero tambien busco que construir algo contigo se sienta simple, claro y
+              humano.
+            </p>
+          </div>
+
+          <blockquote class="skills-quote">
+            <span class="skills-quote-text">Y si, tambien puedo sacarte una sonrisa mientras construimos algo bueno.</span>
+          </blockquote>
+
+          <div class="skills-value-points">
+            <span>Interfaces modernas</span>
+            <span>Proceso claro</span>
+            <span>Buena impresion</span>
+          </div>
+        </article>
       </div>
     </section>
 
     <section class="process section" id="proceso">
       <div class="container">
-        <div class="section-heading" data-reveal>
+        <div class="section-heading process-heading" data-reveal>
           <span class="eyebrow">Proceso</span>
-          <h2>Asi me gusta trabajar: simple, claro y sin hacerte sentir perdido.</h2>
+          <h2>Asi trabajo tus ideas: simple, claro y sin hacerte sentir perdido.</h2>
           <p>
-            Muchas veces los proyectos empiezan con una idea medio revuelta, y esta bien. Mi trabajo tambien es ayudar
-            a ordenar eso y volverlo una pagina que tenga sentido.
+            No hace falta que llegues con todo resuelto. Mi trabajo tambien es ayudarte a ordenar lo que tienes en
+            mente y convertirlo en una pagina con sentido, estructura y buena presencia.
           </p>
         </div>
 
-        <div class="timeline">
-          <article class="timeline-item" data-reveal>
-            <span>01</span>
-            <h3>Me cuentas la idea</h3>
-            <p>No hace falta que me llegues con todo perfecto. Me dices que tienes en mente y empezamos por ahi.</p>
-          </article>
-          <article class="timeline-item" data-reveal>
-            <span>02</span>
-            <h3>Le damos forma</h3>
-            <p>Ordenamos contenido, definimos estilo y vemos como presentar mejor lo que haces.</p>
-          </article>
-          <article class="timeline-item" data-reveal>
-            <span>03</span>
-            <h3>La construyo</h3>
-            <p>Armo la pagina, conecto lo necesario y reviso que se vea bien en todos lados.</p>
-          </article>
-          <article class="timeline-item" data-reveal>
-            <span>04</span>
-            <h3>La dejamos lista</h3>
-            <p>La publicamos, la pruebas con calma y ajustamos detalles si hace falta.</p>
-          </article>
+        <div class="process-flow" data-process-flow data-reveal>
+          <div class="process-flow-head">
+            <div class="process-flow-copy">
+              <span class="panel-tag">Ruta de trabajo</span>
+              <p>Cuatro pasos para pasar de una idea suelta a una pagina clara, funcional y lista para mostrarse.</p>
+            </div>
+
+            <div class="process-flow-status" aria-live="polite">
+              <strong data-process-current>01</strong>
+              <span>de 04</span>
+            </div>
+          </div>
+
+          <div class="process-stepper">
+            <div class="process-progress" aria-hidden="true">
+              <span class="process-progress-fill"></span>
+            </div>
+
+            <div class="process-step-grid" role="tablist" aria-label="Pasos del proceso">
+              <button
+                class="process-step is-active"
+                type="button"
+                role="tab"
+                id="process-step-1"
+                aria-controls="process-panel-1"
+                aria-selected="true"
+                tabindex="0"
+                data-process-trigger="0"
+              >
+                <span class="process-step-top">
+                  <span class="process-step-index">01</span>
+                  <span class="process-step-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                      <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/>
+                      <path d="M8 10h.01"/>
+                      <path d="M12 10h.01"/>
+                      <path d="M16 10h.01"/>
+                    </svg>
+                  </span>
+                </span>
+                <strong>Me cuentas tu idea</strong>
+                <span class="process-step-description">Partimos de lo que ya tienes en mente, sin complicarlo.</span>
+              </button>
+
+              <button
+                class="process-step"
+                type="button"
+                role="tab"
+                id="process-step-2"
+                aria-controls="process-panel-2"
+                aria-selected="false"
+                tabindex="-1"
+                data-process-trigger="1"
+              >
+                <span class="process-step-top">
+                  <span class="process-step-index">02</span>
+                  <span class="process-step-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                      <path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H9v6H3Z"/>
+                      <path d="M9 3h9.5A2.5 2.5 0 0 1 21 5.5V9H9Z"/>
+                      <path d="M3 9h6v12H5.5A2.5 2.5 0 0 1 3 18.5Z"/>
+                      <path d="M9 13h12v5.5a2.5 2.5 0 0 1-2.5 2.5H9Z"/>
+                    </svg>
+                  </span>
+                </span>
+                <strong>Le damos forma</strong>
+                <span class="process-step-description">Ordenamos contenido, enfoque visual y direccion de la pagina.</span>
+              </button>
+
+              <button
+                class="process-step"
+                type="button"
+                role="tab"
+                id="process-step-3"
+                aria-controls="process-panel-3"
+                aria-selected="false"
+                tabindex="-1"
+                data-process-trigger="2"
+              >
+                <span class="process-step-top">
+                  <span class="process-step-index">03</span>
+                  <span class="process-step-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                      <path d="m16 18 6-6-6-6"/>
+                      <path d="m8 6-6 6 6 6"/>
+                      <path d="m14.5 4-5 16"/>
+                    </svg>
+                  </span>
+                </span>
+                <strong>Lo construyo</strong>
+                <span class="process-step-description">Desarrollo, conecto lo necesario y valido la experiencia.</span>
+              </button>
+
+              <button
+                class="process-step"
+                type="button"
+                role="tab"
+                id="process-step-4"
+                aria-controls="process-panel-4"
+                aria-selected="false"
+                tabindex="-1"
+                data-process-trigger="3"
+              >
+                <span class="process-step-top">
+                  <span class="process-step-index">04</span>
+                  <span class="process-step-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                      <path d="M12 3l2.8 5.7L21 10l-4.5 4.4 1.1 6.1L12 17.6 6.4 20.5l1.1-6.1L3 10l6.2-1.3Z"/>
+                      <path d="m9 12 2 2 4-4"/>
+                    </svg>
+                  </span>
+                </span>
+                <strong>Lo dejamos listo</strong>
+                <span class="process-step-description">Probamos, pulimos detalles y te lo entrego listo para mostrarse.</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="process-stage">
+            <div class="process-stage-window">
+              <div class="process-stage-track">
+                <article
+                  class="process-panel is-active"
+                  role="tabpanel"
+                  id="process-panel-1"
+                  aria-labelledby="process-step-1"
+                  aria-hidden="false"
+                  data-process-panel="0"
+                >
+                  <div class="process-panel-top">
+                    <span class="panel-tag">Paso 01</span>
+                    <span class="process-panel-state">Idea inicial</span>
+                  </div>
+
+                  <div class="process-panel-layout">
+                    <div class="process-panel-main">
+                      <div class="process-panel-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                          <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/>
+                          <path d="M8 10h.01"/>
+                          <path d="M12 10h.01"/>
+                          <path d="M16 10h.01"/>
+                        </svg>
+                      </div>
+
+                      <div class="process-panel-copy">
+                        <h3>Me cuentas tu idea</h3>
+                        <p>
+                          No necesitas llegar con todo perfecto. Me compartes lo que tienes en mente y empezamos desde
+                          ahi.
+                        </p>
+                      </div>
+                    </div>
+
+                    <aside class="process-panel-aside">
+                      <span class="process-aside-label">Lo que cuidamos aqui</span>
+                      <div class="process-panel-points">
+                        <span>Contexto</span>
+                        <span>Objetivo</span>
+                        <span>Referencias</span>
+                      </div>
+                    </aside>
+                  </div>
+                </article>
+
+                <article
+                  class="process-panel"
+                  role="tabpanel"
+                  id="process-panel-2"
+                  aria-labelledby="process-step-2"
+                  aria-hidden="true"
+                  data-process-panel="1"
+                >
+                  <div class="process-panel-top">
+                    <span class="panel-tag">Paso 02</span>
+                    <span class="process-panel-state">Direccion visual</span>
+                  </div>
+
+                  <div class="process-panel-layout">
+                    <div class="process-panel-main">
+                      <div class="process-panel-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                          <path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H9v6H3Z"/>
+                          <path d="M9 3h9.5A2.5 2.5 0 0 1 21 5.5V9H9Z"/>
+                          <path d="M3 9h6v12H5.5A2.5 2.5 0 0 1 3 18.5Z"/>
+                          <path d="M9 13h12v5.5a2.5 2.5 0 0 1-2.5 2.5H9Z"/>
+                        </svg>
+                      </div>
+
+                      <div class="process-panel-copy">
+                        <h3>Le damos forma</h3>
+                        <p>
+                          Ordenamos el contenido, definimos el enfoque visual y trazamos una direccion clara para la
+                          pagina.
+                        </p>
+                      </div>
+                    </div>
+
+                    <aside class="process-panel-aside">
+                      <span class="process-aside-label">Lo que cuidamos aqui</span>
+                      <div class="process-panel-points">
+                        <span>Estructura</span>
+                        <span>Jerarquia</span>
+                        <span>Estilo</span>
+                      </div>
+                    </aside>
+                  </div>
+                </article>
+
+                <article
+                  class="process-panel"
+                  role="tabpanel"
+                  id="process-panel-3"
+                  aria-labelledby="process-step-3"
+                  aria-hidden="true"
+                  data-process-panel="2"
+                >
+                  <div class="process-panel-top">
+                    <span class="panel-tag">Paso 03</span>
+                    <span class="process-panel-state">Construccion</span>
+                  </div>
+
+                  <div class="process-panel-layout">
+                    <div class="process-panel-main">
+                      <div class="process-panel-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                          <path d="m16 18 6-6-6-6"/>
+                          <path d="m8 6-6 6 6 6"/>
+                          <path d="m14.5 4-5 16"/>
+                        </svg>
+                      </div>
+
+                      <div class="process-panel-copy">
+                        <h3>Lo construyo</h3>
+                        <p>
+                          Desarrollo la web, conecto lo necesario y reviso que la experiencia funcione bien en todos
+                          lados.
+                        </p>
+                      </div>
+                    </div>
+
+                    <aside class="process-panel-aside">
+                      <span class="process-aside-label">Lo que cuidamos aqui</span>
+                      <div class="process-panel-points">
+                        <span>Desarrollo</span>
+                        <span>Responsive</span>
+                        <span>Integraciones</span>
+                      </div>
+                    </aside>
+                  </div>
+                </article>
+
+                <article
+                  class="process-panel"
+                  role="tabpanel"
+                  id="process-panel-4"
+                  aria-labelledby="process-step-4"
+                  aria-hidden="true"
+                  data-process-panel="3"
+                >
+                  <div class="process-panel-top">
+                    <span class="panel-tag">Paso 04</span>
+                    <span class="process-panel-state">Entrega final</span>
+                  </div>
+
+                  <div class="process-panel-layout">
+                    <div class="process-panel-main">
+                      <div class="process-panel-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                          <path d="M12 3l2.8 5.7L21 10l-4.5 4.4 1.1 6.1L12 17.6 6.4 20.5l1.1-6.1L3 10l6.2-1.3Z"/>
+                          <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                      </div>
+
+                      <div class="process-panel-copy">
+                        <h3>Lo dejamos listo</h3>
+                        <p>
+                          Probamos, ajustamos detalles y te entrego un resultado pulido, funcional y listo para
+                          mostrarse.
+                        </p>
+                      </div>
+                    </div>
+
+                    <aside class="process-panel-aside">
+                      <span class="process-aside-label">Lo que cuidamos aqui</span>
+                      <div class="process-panel-points">
+                        <span>Revision</span>
+                        <span>Ajustes</span>
+                        <span>Entrega</span>
+                      </div>
+                    </aside>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="process-controls">
+              <button class="process-control" type="button" data-process-prev aria-label="Ver paso anterior">Anterior</button>
+
+              <div class="process-dots" aria-label="Cambiar paso del proceso">
+                <button class="process-dot is-active" type="button" data-process-dot="0" aria-label="Ver paso 1" aria-pressed="true"></button>
+                <button class="process-dot" type="button" data-process-dot="1" aria-label="Ver paso 2" aria-pressed="false"></button>
+                <button class="process-dot" type="button" data-process-dot="2" aria-label="Ver paso 3" aria-pressed="false"></button>
+                <button class="process-dot" type="button" data-process-dot="3" aria-label="Ver paso 4" aria-pressed="false"></button>
+              </div>
+
+              <button class="process-control" type="button" data-process-next aria-label="Ver paso siguiente">Siguiente</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -647,110 +982,177 @@
     <section class="contact-section section" id="contacto">
       <div class="container contact-grid">
         <div class="contact-copy" data-reveal>
-          <span class="eyebrow">Contacto</span>
-          <h2>Si tienes una idea medio revuelta, escribeme igual. Muchas veces asi empiezan los proyectos buenos.</h2>
-          <p>
-            No necesitas saber como pedirlo ni usar palabras tecnicas. Me cuentas que quieres lograr y vemos juntos
-            como convertirlo en una pagina clara, bonita y facil de mostrar.
-          </p>
-          <p class="contact-trust">
-            Si te sirve, arrancamos por WhatsApp y me lo cuentas tal como lo tienes en la cabeza.
-          </p>
+          <div class="contact-copy-top">
+            <span class="eyebrow">Contacto</span>
+            <h2>Si tienes una idea en mente, aunque todav&iacute;a est&eacute; medio revuelta, escr&iacute;beme igual.</h2>
+            <p>
+              No necesitas saber c&oacute;mo pedirlo ni usar palabras t&eacute;cnicas. Me cuentas qu&eacute; quieres lograr y
+              vemos juntos c&oacute;mo convertirlo en una p&aacute;gina clara, bonita y f&aacute;cil de mostrar.
+            </p>
+            <p class="contact-trust">
+              Si prefieres, podemos empezar por WhatsApp y me cuentas la idea tal como la tienes en la cabeza.
+            </p>
+          </div>
+
+          <div class="contact-signals" aria-label="Lo que puedes esperar">
+            <span>Respuesta directa</span>
+            <span>Proceso claro</span>
+            <span>WhatsApp o correo</span>
+          </div>
 
           <div class="contact-shortcuts">
-            <a class="contact-shortcut" data-link="whatsapp" href="https://wa.me/50257219373" target="_blank" rel="noreferrer">
-              <span class="contact-icon">WA</span>
-              <div>
+            <a class="contact-shortcut contact-shortcut-whatsapp" data-link="whatsapp" href="https://wa.me/50257219373" target="_blank" rel="noreferrer">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                  <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-4-.98L3 21l1.32-5.07A8.5 8.5 0 1 1 21 11.5Z"/>
+                  <path d="M9.3 9.4c.22-.48.46-.49.67-.5h.57c.14 0 .34.05.52.46.18.42.61 1.45.66 1.55.06.1.1.23.02.37-.08.14-.12.23-.24.35-.12.12-.25.27-.35.36-.12.1-.24.21-.1.4.14.18.62 1.02 1.33 1.65.91.81 1.67 1.06 1.9 1.18.23.11.36.1.49-.06.13-.16.56-.65.71-.87.15-.22.3-.18.51-.11.21.08 1.35.64 1.58.76.23.12.38.17.43.27.05.1.05.6-.14 1.17-.19.56-1.11 1.08-1.52 1.13-.41.05-.93.08-1.5-.11-.34-.11-.78-.25-1.35-.5-2.37-1.03-3.92-3.56-4.03-3.73-.11-.17-.96-1.28-.96-2.45 0-1.16.61-1.73.83-1.97Z"/>
+                </svg>
+              </span>
+              <div class="contact-shortcut-copy">
                 <strong>WhatsApp</strong>
-                <span>La via mas directa para cotizar, consultar o aterrizar una idea rapido.</span>
+                <span>La forma m&aacute;s r&aacute;pida para cotizar, resolver dudas o empezar una idea.</span>
               </div>
+              <span class="contact-shortcut-action">Abrir chat</span>
             </a>
-            <a class="contact-shortcut" data-link="linkedin" href="https://www.linkedin.com/in/gabriel-paz-gapg/" target="_blank" rel="noreferrer">
-              <span class="contact-icon">in</span>
-              <div>
+
+            <a class="contact-shortcut contact-shortcut-linkedin" data-link="linkedin" href="https://www.linkedin.com/in/gabriel-paz-gapg/" target="_blank" rel="noreferrer">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 1 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/>
+                  <path d="M2 9h4v12H2z"/>
+                  <path d="M4 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z"/>
+                </svg>
+              </span>
+              <div class="contact-shortcut-copy">
                 <strong>LinkedIn</strong>
-                <span>Si quieres conocer un poco mas de mi perfil y mantener el contacto por ahi.</span>
+                <span>Si quieres revisar mi perfil profesional y mantener el contacto por ah&iacute;.</span>
               </div>
+              <span class="contact-shortcut-action">Ver perfil</span>
             </a>
-            <a class="contact-shortcut" data-link="github" href="https://github.com/gabrielpaz" target="_blank" rel="noreferrer">
-              <span class="contact-icon">GH</span>
-              <div>
-                <strong>GitHub</strong>
-                <span>Si quieres ver proyectos, demos y una muestra mas completa de como trabajo.</span>
-              </div>
-            </a>
-            <a class="contact-shortcut" data-link="cv" href="./Gabriel-Paz-CV.pdf" download="Gabriel-Paz-CV.pdf">
-              <span class="contact-icon">CV</span>
-              <div>
+
+            <a class="contact-shortcut contact-shortcut-wide contact-shortcut-cv" data-link="cv" href="./Gabriel-Paz-CV.pdf" download="Gabriel-Paz-CV.pdf">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                  <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7Z"/>
+                  <path d="M14 2v5h5"/>
+                  <path d="M9 13h6"/>
+                  <path d="M9 17h6"/>
+                  <path d="M9 9h2"/>
+                </svg>
+              </span>
+              <div class="contact-shortcut-copy">
                 <strong>CV en PDF</strong>
-                <span>Descarga directa de mi CV para revisarlo, guardarlo o compartirlo rapidamente.</span>
+                <span>Si prefieres una vista r&aacute;pida de mi experiencia, lo puedes descargar en un solo archivo.</span>
               </div>
+              <span class="contact-shortcut-action">Descargar</span>
             </a>
           </div>
         </div>
 
-        <form class="contact-form" data-reveal>
+        <form class="contact-form" data-reveal novalidate>
           <div class="form-header">
-            <span class="panel-tag">Formulario</span>
-            <h3>Cuentame brevemente que necesitas.</h3>
+            <span class="panel-tag">Cu&eacute;ntame tu idea</span>
+            <h3>Cu&eacute;ntame brevemente qu&eacute; necesitas</h3>
             <p>Si ya tienes una idea clara, perfecto. Si no, dame contexto y te ayudo a aterrizarla.</p>
           </div>
 
           <div class="form-grid">
-            <label class="field field-half">
-              <span>Nombre</span>
-              <input type="text" name="name" placeholder="Tu nombre" required>
+            <label class="field field-half" data-form-field="name">
+              <span class="field-head">
+                <span>Nombre</span>
+                <span class="field-state">Requerido</span>
+              </span>
+              <input
+                type="text"
+                name="name"
+                autocomplete="name"
+                placeholder="Tu nombre"
+                minlength="2"
+                aria-describedby="contact-error-name"
+                required
+              >
+              <span class="field-error" id="contact-error-name" aria-live="polite"></span>
             </label>
-            <label class="field field-half">
-              <span>Correo</span>
-              <input type="email" name="email" placeholder="tu@empresa.com" required>
+
+            <label class="field field-half" data-form-field="email">
+              <span class="field-head">
+                <span>Correo electr&oacute;nico</span>
+                <span class="field-state">Requerido</span>
+              </span>
+              <input
+                type="email"
+                name="email"
+                inputmode="email"
+                autocomplete="email"
+                placeholder="tu@empresa.com"
+                aria-describedby="contact-error-email"
+                required
+              >
+              <span class="field-error" id="contact-error-email" aria-live="polite"></span>
             </label>
-            <label class="field field-half">
-              <span>Telefono o WhatsApp</span>
+
+            <label class="field field-half" data-form-field="phone">
+              <span class="field-head">
+                <span>Tel&eacute;fono o WhatsApp</span>
+                <span class="field-state">Opcional</span>
+              </span>
               <input
                 type="tel"
                 name="phone"
                 inputmode="tel"
                 autocomplete="tel"
-                placeholder="Tu numero de telefono"
-                required
+                placeholder="Tu n&uacute;mero de contacto"
+                aria-describedby="contact-error-phone"
               >
+              <span class="field-error" id="contact-error-phone" aria-live="polite"></span>
             </label>
-            <label class="field field-half">
-              <span>Tipo de proyecto</span>
-              <input
-                type="text"
-                name="project"
-                list="project-types"
-                placeholder="Landing, dashboard, e-commerce, plataforma..."
-                required
-              >
+
+            <label class="field field-half" data-form-field="project">
+              <span class="field-head">
+                <span>Tipo de proyecto</span>
+                <span class="field-state">Requerido</span>
+              </span>
+              <span class="select-wrap">
+                <select name="project" aria-describedby="contact-error-project" required>
+                  <option value="">Selecciona una opci&oacute;n</option>
+                  <option value="Landing page">Landing page</option>
+                  <option value="Sitio web corporativo">Sitio web corporativo</option>
+                  <option value="Portafolio">Portafolio</option>
+                  <option value="Tienda online">Tienda online</option>
+                  <option value="Dashboard / sistema">Dashboard / sistema</option>
+                  <option value="Redise&ntilde;o web">Redise&ntilde;o web</option>
+                  <option value="A&uacute;n no estoy seguro">A&uacute;n no estoy seguro</option>
+                </select>
+              </span>
+              <span class="field-error" id="contact-error-project" aria-live="polite"></span>
             </label>
-            <label class="field field-full message-field">
-              <span>Mensaje</span>
+
+            <label class="field field-full message-field" data-form-field="message">
+              <span class="field-head">
+                <span>Mensaje</span>
+                <span class="field-state">Requerido</span>
+              </span>
               <textarea
                 name="message"
-                rows="5"
-                placeholder="Cuentame que necesitas, en que etapa estas y que te gustaria resolver."
+                rows="6"
+                minlength="20"
+                placeholder="Cu&eacute;ntame qu&eacute; quieres construir, en qu&eacute; etapa est&aacute;s y qu&eacute; te gustar&iacute;a lograr con esta p&aacute;gina."
+                aria-describedby="contact-error-message"
                 required
               ></textarea>
+              <span class="field-error" id="contact-error-message" aria-live="polite"></span>
             </label>
           </div>
 
-          <datalist id="project-types">
-            <option value="Landing page comercial"></option>
-            <option value="Dashboard o sistema administrativo"></option>
-            <option value="E-commerce"></option>
-            <option value="Sitio corporativo"></option>
-            <option value="Portafolio o marca personal"></option>
-            <option value="Mejora visual o responsive"></option>
-          </datalist>
-
           <div class="form-footer">
-            <button class="button submit-button" type="submit">Enviar consulta</button>
-            <p class="form-note">Si prefieres algo mas directo, WhatsApp suele ser la forma mas rapida de empezar.</p>
+            <div class="form-support">
+              <p class="form-note">
+                Tu mensaje llega directamente a m&iacute;. Tambi&eacute;n podemos seguir por WhatsApp si te resulta m&aacute;s c&oacute;modo.
+              </p>
+              <p class="form-status" aria-live="polite"></p>
+            </div>
+            <button class="button submit-button" type="submit">Enviar mensaje</button>
           </div>
-          <p class="form-status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -764,7 +1166,6 @@
       </div>
       <div class="footer-links">
         <a data-link="linkedin" href="https://www.linkedin.com/in/gabriel-paz-gapg/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a data-link="github" href="https://github.com/gabrielpaz" target="_blank" rel="noreferrer">GitHub</a>
         <a data-link="cv" href="./Gabriel-Paz-CV.pdf" download="Gabriel-Paz-CV.pdf">Descargar CV</a>
         <a href="#inicio">Volver arriba</a>
       </div>

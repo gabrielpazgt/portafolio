@@ -92,13 +92,13 @@ Puedes usar una extensión como:
 Este repositorio ya está listo para publicarse como sitio estático. Como tu remoto actual es:
 
 ```text
-https://github.com/gabrielpazgt/Portafolio-GabrielPaz.git
+https://github.com/gabrielpazgt/portafolio.git
 ```
 
 la URL esperada de GitHub Pages será:
 
 ```text
-https://gabrielpazgt.github.io/Portafolio-GabrielPaz/
+https://gabrielpazgt.github.io/portafolio/
 ```
 
 ### 1. Sube tus cambios al repositorio
@@ -130,7 +130,7 @@ Después guarda los cambios.
 GitHub normalmente tarda entre 1 y 10 minutos en dejar el sitio disponible. Cuando termine, podrás abrir:
 
 ```text
-https://gabrielpazgt.github.io/Portafolio-GabrielPaz/
+https://gabrielpazgt.github.io/portafolio/
 ```
 
 ## ✅ Recomendaciones antes de publicar

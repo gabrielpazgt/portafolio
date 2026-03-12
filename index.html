@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Portafolio de Gabriel Paz. Desarrollo frontend con criterio visual, estructura clara y enfoque en productos web reales."
+  >
+  <title>Gabo Developer | Portafolio Frontend</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+  <div class="page-noise" aria-hidden="true"></div>
+  <div class="progress-bar" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <span class="brand-mark">GD</span>
+        <span class="brand-copy">
+          <strong data-field="brandName">Gabo Developer</strong>
+          <span data-field="role">Desarrollador Frontend Web</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Principal">
+        <a href="#trabajos">Trabajos</a>
+        <a href="#sobre-mi">Sobre mi</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <a class="button button-quote header-cta" data-link="whatsapp" href="https://wa.me/50257219373" target="_blank" rel="noreferrer">
+        Cotizar
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal>
+          <span class="eyebrow"><span data-field="name">Gabriel Paz</span> / Frontend & Product UI</span>
+          <h1>Desarrollo experiencias web modernas, claras y pensadas para generar confianza.</h1>
+          <p class="hero-text">
+            Construyo interfaces y sitios web que combinan buena presencia visual, claridad de contenido y una
+            experiencia intuitiva para usuarios, clientes y equipos que necesitan un producto serio desde el primer scroll.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button" href="#trabajos">Ver proyectos</a>
+            <a class="button button-secondary" data-link="whatsapp" href="https://wa.me/50257219373" target="_blank" rel="noreferrer">Cotizar</a>
+            <a class="button button-tertiary" data-link="cv" href="./cv.html">Ver CV</a>
+          </div>
+
+          <div class="hero-links" aria-label="Perfiles profesionales">
+            <a data-link="linkedin" href="https://www.linkedin.com/in/gabriel-paz-gapg/" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+            <a data-link="github" href="https://github.com/gabrielpaz" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+            <a data-link="whatsapp" href="https://wa.me/50257219373" target="_blank" rel="noreferrer">
+              WhatsApp
+            </a>
+          </div>
+
+          <div class="hero-indicators">
+            <article class="indicator-card">
+              <strong>Frontend enfocado en producto</strong>
+              <span>Componentes, jerarquia y experiencia pensada para uso real.</span>
+            </article>
+            <article class="indicator-card">
+              <strong>Angular y React</strong>
+              <span>Trabajo con stacks modernos para interfaces escalables y mantenibles.</span>
+            </article>
+            <article class="indicator-card">
+              <strong>Responsive con criterio</strong>
+              <span>Desktop, tablet y mobile resueltos con consistencia y buena lectura.</span>
+            </article>
+            <article class="indicator-card">
+              <strong>Integracion y logica real</strong>
+              <span>APIs, formularios, estados, validaciones y flujos conectados al negocio.</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-reveal>
+          <div class="hero-orbit hero-orbit-a"></div>
+          <div class="hero-orbit hero-orbit-b"></div>
+
+          <article class="glass-panel hero-profile-card">
+            <div class="hero-profile-top">
+              <div class="hero-portrait">
+                <img src="./gabriel-foto.jpg" alt="Retrato de Gabriel Paz">
+              </div>
+              <div>
+                <span class="panel-tag">Disponible para colaborar</span>
+                <h2 data-field="name">Gabriel Paz</h2>
+                <p data-field="role">Desarrollador Frontend Web</p>
+              </div>
+            </div>
+
+            <p class="hero-profile-text">
+              Desarrollo productos web con foco en claridad visual, estructura limpia, experiencia de usuario y una
+              ejecucion que se sienta lista para presentarse a clientes o salir a produccion.
+            </p>
+
+            <div class="hero-stack">
+              <span>Angular</span>
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Node.js</span>
+              <span>NestJS</span>
+              <span>SCSS</span>
+            </div>
+
+            <div class="hero-profile-links">
+              <a class="inline-link" data-link="linkedin" href="https://www.linkedin.com/in/gabriel-paz-gapg/" target="_blank" rel="noreferrer">
+                Ver LinkedIn
+              </a>
+              <a class="inline-link" data-link="github" href="https://github.com/gabrielpaz" target="_blank" rel="noreferrer">
+                Ver GitHub
+              </a>
+            </div>
+          </article>
+
+          <div class="hero-note-stack">
+            <button class="hero-note-card is-open" type="button" data-expand-card aria-expanded="true">
+              <span class="panel-tag">Lo que cuido</span>
+              <strong>Interfaces claras y modernas</strong>
+              <p>Buena jerarquia, contenido legible y una sensacion visual sobria desde el primer vistazo.</p>
+            </button>
+
+            <button class="hero-note-card" type="button" data-expand-card aria-expanded="false">
+              <span class="panel-tag">Como lo desarrollo</span>
+              <strong>Responsive y enfocado en experiencia</strong>
+              <p>Desktop, tablet y movil resueltos con consistencia, ritmo visual y una lectura natural.</p>
+            </button>
+
+            <button class="hero-note-card" type="button" data-expand-card aria-expanded="false">
+              <span class="panel-tag">Como lo cierro</span>
+              <strong>Sitios listos para mostrar, vender o escalar</strong>
+              <p>No me quedo solo en la pantalla: pienso la estructura, la logica y la presentacion final del producto.</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="works section" id="trabajos">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <span class="eyebrow">Trabajos</span>
+          <h2>Casos conceptuales con identidad propia y enfoque comercial.</h2>
+          <p>
+            Estos proyectos no intentan hacerse pasar por clientes reales. Son conceptos para mostrar direccion de
+            diseno, estructura comercial, variedad visual y capacidad de ejecucion en distintos tipos de negocio.
+          </p>
+        </div>
+
+        <div class="works-overview">
+          <article class="works-intro-card" data-reveal>
+            <span class="panel-tag">Direccion visual</span>
+            <h3>Muestras conceptuales que dejan ver criterio, estructura y capacidad de ejecucion.</h3>
+            <p>
+              Los siguientes proyectos son conceptos visuales. No intentan hacerse pasar por clientes reales: sirven
+              para mostrar como planteo una landing, una marca o una experiencia comercial cuando el objetivo es que se
+              vea solida, clara y lista para presentarse.
+            </p>
+          </article>
+
+          <div class="project-grid">
+            <a class="project-card project-card-cafe" data-reveal href="./demos/nativo-cafe/index.html">
+              <div class="browser-chrome" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="project-preview">
+                <div class="preview-copy">
+                  <span>Concepto visual / landing comercial</span>
+                  <strong>Nativo Cafe</strong>
+                </div>
+                <div class="preview-ui preview-ui-cafe">
+                  <div class="coffee-cup"></div>
+                  <div class="menu-pill"></div>
+                  <div class="menu-pill short"></div>
+                </div>
+              </div>
+              <div class="project-meta">
+                <div class="project-label-row">
+                  <span>Cafeteria premium</span>
+                  <span>HTML / CSS / JS</span>
+                </div>
+                <p>
+                  Direccion de diseno para un negocio gastronomico: jerarquia editorial, atmosfera cuidada y estructura
+                  comercial clara para comunicar producto, espacio y reserva.
+                </p>
+                <div class="project-focus">
+                  <span>Enfoque: marca, narrativa visual y conversion</span>
+                  <span class="project-cta">Ver caso conceptual</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="project-card project-card-lumen" data-reveal href="./demos/atelier-lumen/index.html">
+              <div class="browser-chrome" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="project-preview">
+                <div class="preview-copy">
+                  <span>Concepto visual / retail e interiorismo</span>
+                  <strong>Atelier Lumen</strong>
+                </div>
+                <div class="preview-ui preview-ui-lumen">
+                  <div class="shape-lamp"></div>
+                  <div class="shape-chair"></div>
+                </div>
+              </div>
+              <div class="project-meta">
+                <div class="project-label-row">
+                  <span>Showroom y e-commerce</span>
+                  <span>HTML / CSS / JS</span>
+                </div>
+                <p>
+                  Propuesta enfocada en una marca de interiorismo con look mas editorial: fichas limpias, sensacion de
+                  lujo y una experiencia pensada para destacar producto y marca.
+                </p>
+                <div class="project-focus">
+                  <span>Enfoque: presencia de marca y presentacion de catalogo</span>
+                  <span class="project-cta">Ver direccion visual</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="project-card project-card-auto" data-reveal href="./demos/blackline-auto/index.html">
+              <div class="browser-chrome" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="project-preview">
+                <div class="preview-copy">
+                  <span>Concepto visual / servicio tecnico</span>
+                  <strong>Blackline Auto</strong>
+                </div>
+                <div class="preview-ui preview-ui-auto">
+                  <div class="car-silhouette"></div>
+                  <div class="signal-bars"></div>
+                </div>
+              </div>
+              <div class="project-meta">
+                <div class="project-label-row">
+                  <span>Detailing y performance</span>
+                  <span>HTML / CSS / JS</span>
+                </div>
+                <p>
+                  Concepto para un servicio premium con tono mas tecnico y agresivo. La intencion es mostrar como adapto
+                  identidad visual, ritmo y llamados a la accion segun el tipo de negocio.
+                </p>
+                <div class="project-focus">
+                  <span>Enfoque: impacto visual, claridad de oferta y contacto</span>
+                  <span class="project-cta">Ver demo</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="project-card project-card-legal" data-reveal href="./demos/vertex-legal/index.html">
+              <div class="browser-chrome" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="project-preview">
+                <div class="preview-copy">
+                  <span>Concepto visual / firma legal</span>
+                  <strong>Vertex Legal</strong>
+                </div>
+                <div class="preview-ui preview-ui-legal">
+                  <div class="legal-column"></div>
+                  <div class="legal-lines"></div>
+                </div>
+              </div>
+              <div class="project-meta">
+                <div class="project-label-row">
+                  <span>Despacho y servicios</span>
+                  <span>HTML / CSS / JS</span>
+                </div>
+                <p>
+                  Sitio sobrio para servicios profesionales con tono serio, jerarquia clara y un cierre pensado para
+                  consulta o agendado.
+                </p>
+                <div class="project-focus">
+                  <span>Enfoque: confianza, claridad y autoridad visual</span>
+                  <span class="project-cta">Ver caso</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="project-card project-card-wellness" data-reveal href="./demos/solara-wellness/index.html">
+              <div class="browser-chrome" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="project-preview">
+                <div class="preview-copy">
+                  <span>Concepto visual / wellness</span>
+                  <strong>Solara Wellness</strong>
+                </div>
+                <div class="preview-ui preview-ui-wellness">
+                  <div class="wellness-stone"></div>
+                  <div class="wellness-wave"></div>
+                </div>
+              </div>
+              <div class="project-meta">
+                <div class="project-label-row">
+                  <span>Clinica y booking</span>
+                  <span>HTML / CSS / JS</span>
+                </div>
+                <p>
+                  Concepto para marca de bienestar con atmosfera suave, ritmo calmado y enfoque en tratamientos,
+                  reservas y experiencia premium.
+                </p>
+                <div class="project-focus">
+                  <span>Enfoque: atmosfera, reservas y presentacion de servicio</span>
+                  <span class="project-cta">Ver caso</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="project-card project-card-realty" data-reveal href="./demos/northpeak-realty/index.html">
+              <div class="browser-chrome" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="project-preview">
+                <div class="preview-copy">
+                  <span>Concepto visual / real estate</span>
+                  <strong>Northpeak Realty</strong>
+                </div>
+                <div class="preview-ui preview-ui-realty">
+                  <div class="house-shape"></div>
+                  <div class="realtor-card"></div>
+                </div>
+              </div>
+              <div class="project-meta">
+                <div class="project-label-row">
+                  <span>Inmobiliaria</span>
+                  <span>HTML / CSS / JS</span>
+                </div>
+                <p>
+                  Landing para propiedades y captacion de clientes con una presentacion limpia, fichas visuales y foco
+                  en confianza al explorar.
+                </p>
+                <div class="project-focus">
+                  <span>Enfoque: listings, confianza y contacto guiado</span>
+                  <span class="project-cta">Ver caso</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="project-card project-card-finance" data-reveal href="./demos/orbit-finance/index.html">
+              <div class="browser-chrome" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="project-preview">
+                <div class="preview-copy">
+                  <span>Concepto visual / fintech</span>
+                  <strong>Orbit Finance</strong>
+                </div>
+                <div class="preview-ui preview-ui-finance">
+                  <div class="finance-chart"></div>
+                  <div class="finance-card"></div>
+                </div>
+              </div>
+              <div class="project-meta">
+                <div class="project-label-row">
+                  <span>Finanzas y asesoria</span>
+                  <span>HTML / CSS / JS</span>
+                </div>
+                <p>
+                  Interface con tono mas analitico y confiable para una marca financiera que necesita claridad visual,
+                  datos y conversion sin ruido.
+                </p>
+                <div class="project-focus">
+                  <span>Enfoque: claridad, datos y sensacion de control</span>
+                  <span class="project-cta">Ver caso</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="project-card project-card-studio" data-reveal href="./demos/moss-studio/index.html">
+              <div class="browser-chrome" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="project-preview">
+                <div class="preview-copy">
+                  <span>Concepto visual / arquitectura</span>
+                  <strong>Moss Studio</strong>
+                </div>
+                <div class="preview-ui preview-ui-studio">
+                  <div class="studio-block studio-block-a"></div>
+                  <div class="studio-block studio-block-b"></div>
+                </div>
+              </div>
+              <div class="project-meta">
+                <div class="project-label-row">
+                  <span>Arquitectura y interiorismo</span>
+                  <span>HTML / CSS / JS</span>
+                </div>
+                <p>
+                  Propuesta editorial para estudio creativo con composicion mas arquitectonica, tipografia con peso y
+                  secciones pensadas para mostrar obra.
+                </p>
+                <div class="project-focus">
+                  <span>Enfoque: narrativa visual y presentacion de portafolio</span>
+                  <span class="project-cta">Ver caso</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="project-card project-card-fitness" data-reveal href="./demos/pulse-fit/index.html">
+              <div class="browser-chrome" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="project-preview">
+                <div class="preview-copy">
+                  <span>Concepto visual / fitness</span>
+                  <strong>Pulse Fit Club</strong>
+                </div>
+                <div class="preview-ui preview-ui-fitness">
+                  <div class="fitness-ring"></div>
+                  <div class="fitness-bars"></div>
+                </div>
+              </div>
+              <div class="project-meta">
+                <div class="project-label-row">
+                  <span>Gym y membresias</span>
+                  <span>HTML / CSS / JS</span>
+                </div>
+                <p>
+                  Sitio energetico para club fitness con ritmo fuerte, horarios, planes y una experiencia visual mas
+                  dinamica orientada a conversion.
+                </p>
+                <div class="project-focus">
+                  <span>Enfoque: energia, membresias y reservas</span>
+                  <span class="project-cta">Ver caso</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section" id="sobre-mi">
+      <div class="container about-grid">
+        <div class="about-copy" data-reveal>
+          <span class="eyebrow">Sobre mi</span>
+          <h2>Desarrollo con enfoque visual, tecnico y humano.</h2>
+          <p>
+            Soy desarrollador de software con enfoque principalmente frontend. Me interesa construir productos web que
+            funcionen bien, se entiendan rapido y se sientan cuidados tanto en la logica como en la presentacion.
+          </p>
+          <p>
+            Disfruto trabajar en proyectos donde tecnologia, estructura y criterio visual se conectan para crear algo
+            util, solido y con identidad propia. Todavia estoy creciendo, pero ya busco que cada entrega se vea seria,
+            clara y lista para sostener una conversacion profesional con clientes o equipos.
+          </p>
+
+          <div class="about-links">
+            <a class="inline-link" data-link="linkedin" href="https://www.linkedin.com/in/gabriel-paz-gapg/" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+            <a class="inline-link" data-link="github" href="https://github.com/gabrielpaz" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+            <a class="inline-link" data-link="cv" href="./cv.html">CV online</a>
+          </div>
+        </div>
+
+        <div class="about-side" data-reveal>
+          <figure class="portrait-card">
+            <img src="./gabriel-foto.jpg" alt="Gabriel Paz">
+            <figcaption>
+              <strong data-field="name">Gabriel Paz</strong>
+              <span data-field="role">Desarrollador Frontend Web</span>
+            </figcaption>
+          </figure>
+
+          <div class="about-points">
+            <article>
+              <strong>Enfoque</strong>
+              <span>Frontend moderno, estructura clara y una experiencia intuitiva para usuarios reales.</span>
+            </article>
+            <article>
+              <strong>Forma de trabajo</strong>
+              <span>Diseno, desarrollo, refinamiento visual, revision responsive e iteracion con criterio.</span>
+            </article>
+            <article>
+              <strong>Diferencial</strong>
+              <span>Cuido detalles, pienso en el usuario y busco que el producto se sienta profesional de verdad.</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills section" id="habilidades">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <span class="eyebrow">Habilidades</span>
+          <h2>Capacidades tecnicas y visuales aplicadas a proyectos reales.</h2>
+          <p>
+            No se trata solo de herramientas. Me interesa resolver bien la interfaz, el flujo, la integracion y la
+            sensacion general del producto para que todo se vea mas solido y mejor pensado.
+          </p>
+        </div>
+
+        <div class="capability-grid">
+          <article class="capability-card" data-reveal>
+            <span>01</span>
+            <h3>Desarrollo frontend</h3>
+            <p>Construccion de interfaces modernas con Angular, React, TypeScript y componentes reutilizables.</p>
+          </article>
+          <article class="capability-card" data-reveal>
+            <span>02</span>
+            <h3>Diseno de interfaces y maquetacion</h3>
+            <p>Jerarquia visual, estructura limpia, responsive design y atencion al detalle en cada pantalla.</p>
+          </article>
+          <article class="capability-card" data-reveal>
+            <span>03</span>
+            <h3>Integracion y logica</h3>
+            <p>Consumo de APIs, formularios, validaciones, estados, flujos y conexion con servicios reales.</p>
+          </article>
+          <article class="capability-card" data-reveal>
+            <span>04</span>
+            <h3>Optimizacion y despliegue</h3>
+            <p>Buenas practicas de rendimiento, organizacion del proyecto y preparacion para publicacion.</p>
+          </article>
+        </div>
+
+        <div class="stack-board" data-reveal>
+          <article class="stack-card">
+            <span class="panel-tag">Frontend</span>
+            <div class="skill-cloud">
+              <span>Angular</span>
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>JavaScript</span>
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>SCSS</span>
+              <span>Responsive Design</span>
+            </div>
+          </article>
+
+          <article class="stack-card">
+            <span class="panel-tag">Integracion y backend</span>
+            <div class="skill-cloud">
+              <span>Node.js</span>
+              <span>NestJS</span>
+              <span>Strapi</span>
+              <span>Python</span>
+              <span>API Integration</span>
+              <span>Formularios</span>
+              <span>Validaciones</span>
+            </div>
+          </article>
+
+          <article class="stack-card">
+            <span class="panel-tag">Datos y herramientas</span>
+            <div class="skill-cloud">
+              <span>PostgreSQL</span>
+              <span>MySQL</span>
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>Azure DevOps</span>
+              <span>Deploy</span>
+              <span>Organizacion de proyecto</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process section" id="proceso">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <span class="eyebrow">Proceso</span>
+          <h2>Una forma de trabajo clara para que el proyecto avance con orden.</h2>
+          <p>
+            Esta seccion responde de forma simple una pregunta importante para cualquier cliente o colaborador: como
+            seria trabajar conmigo y como aterrizo una idea en algo presentable y funcional.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item" data-reveal>
+            <span>01</span>
+            <h3>Descubrimiento</h3>
+            <p>Definimos objetivos, tipo de usuario, alcance y el mensaje que el sitio o producto debe transmitir.</p>
+          </article>
+          <article class="timeline-item" data-reveal>
+            <span>02</span>
+            <h3>Estructura y direccion visual</h3>
+            <p>Organizo la informacion, defino jerarquias, componentes y una base visual clara para el proyecto.</p>
+          </article>
+          <article class="timeline-item" data-reveal>
+            <span>03</span>
+            <h3>Desarrollo</h3>
+            <p>Construyo la interfaz, integro funcionalidades y reviso cada detalle en desktop, tablet y movil.</p>
+          </article>
+          <article class="timeline-item" data-reveal>
+            <span>04</span>
+            <h3>Entrega y mejora</h3>
+            <p>Dejo el proyecto listo para publicarse, crecer o seguir refinandose segun la necesidad del producto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section section" id="contacto">
+      <div class="container contact-grid">
+        <div class="contact-copy" data-reveal>
+          <span class="eyebrow">Contacto</span>
+          <h2>Si tu proyecto necesita mejor presencia, mejor estructura o una interfaz mas clara, escribeme.</h2>
+          <p>
+            Puedes llegar con una idea clara o con algo todavia desordenado. Lo importante es entender que quieres
+            mostrar, vender o mejorar para aterrizar una solucion web que se vea seria y funcione bien.
+          </p>
+          <p class="contact-trust">
+            Si te conviene, empezamos por WhatsApp y luego definimos alcance, enfoque visual y siguiente paso.
+          </p>
+
+          <div class="contact-shortcuts">
+            <a class="contact-shortcut" data-link="whatsapp" href="https://wa.me/50257219373" target="_blank" rel="noreferrer">
+              <span class="contact-icon">WA</span>
+              <div>
+                <strong>WhatsApp</strong>
+                <span>La via mas directa para cotizar, consultar o aterrizar una idea rapido.</span>
+              </div>
+            </a>
+            <a class="contact-shortcut" data-link="linkedin" href="https://www.linkedin.com/in/gabriel-paz-gapg/" target="_blank" rel="noreferrer">
+              <span class="contact-icon">in</span>
+              <div>
+                <strong>LinkedIn</strong>
+                <span>Si quieres revisar perfil, experiencia y mantener el contacto por ahi.</span>
+              </div>
+            </a>
+            <a class="contact-shortcut" data-link="github" href="https://github.com/gabrielpaz" target="_blank" rel="noreferrer">
+              <span class="contact-icon">GH</span>
+              <div>
+                <strong>GitHub</strong>
+                <span>Para ver codigo, estructura y una referencia mas tecnica de mi trabajo.</span>
+              </div>
+            </a>
+            <a class="contact-shortcut" data-link="cv" href="./cv.html">
+              <span class="contact-icon">CV</span>
+              <div>
+                <strong>CV online</strong>
+                <span>Un resumen corto para revisar perfil, stack y enfoque sin salir del portafolio.</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" data-reveal>
+          <div class="form-header">
+            <span class="panel-tag">Formulario</span>
+            <h3>Cuentame brevemente que necesitas.</h3>
+            <p>Si ya tienes una idea clara, perfecto. Si no, dame contexto y te ayudo a aterrizarla.</p>
+          </div>
+
+          <div class="form-grid">
+            <label class="field field-half">
+              <span>Nombre</span>
+              <input type="text" name="name" placeholder="Tu nombre" required>
+            </label>
+            <label class="field field-half">
+              <span>Correo</span>
+              <input type="email" name="email" placeholder="tu@empresa.com" required>
+            </label>
+            <label class="field field-full">
+              <span>Tipo de proyecto</span>
+              <input
+                type="text"
+                name="project"
+                list="project-types"
+                placeholder="Landing, dashboard, e-commerce, plataforma..."
+                required
+              >
+            </label>
+            <label class="field field-full message-field">
+              <span>Mensaje</span>
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Cuentame que necesitas, en que etapa estas y que te gustaria resolver."
+                required
+              ></textarea>
+            </label>
+          </div>
+
+          <datalist id="project-types">
+            <option value="Landing page comercial"></option>
+            <option value="Dashboard o sistema administrativo"></option>
+            <option value="E-commerce"></option>
+            <option value="Sitio corporativo"></option>
+            <option value="Portafolio o marca personal"></option>
+            <option value="Mejora visual o responsive"></option>
+          </datalist>
+
+          <div class="form-footer">
+            <button class="button submit-button" type="submit">Enviar consulta</button>
+            <p class="form-note">Si prefieres algo mas directo, WhatsApp suele ser la forma mas rapida de empezar.</p>
+          </div>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong data-field="name">Gabriel Paz</strong>
+        <p>Frontend Developer con enfoque en experiencias web claras, modernas y funcionales.</p>
+      </div>
+      <div class="footer-links">
+        <a data-link="linkedin" href="https://www.linkedin.com/in/gabriel-paz-gapg/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a data-link="github" href="https://github.com/gabrielpaz" target="_blank" rel="noreferrer">GitHub</a>
+        <a data-link="cv" href="./cv.html">CV</a>
+        <a href="#inicio">Volver arriba</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./scripts/portfolio-data.js"></script>
+  <script src="./scripts/main.js"></script>
+</body>
+</html>

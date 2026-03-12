@@ -351,8 +351,7 @@ textarea {
 }
 
 .hero-links a,
-.inline-link,
-.project-cta {
+.inline-link {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -362,8 +361,7 @@ textarea {
 }
 
 .hero-links a::after,
-.inline-link::after,
-.project-cta::after {
+.inline-link::after {
   content: "->";
   color: var(--accent-alt-strong);
 }
@@ -371,9 +369,7 @@ textarea {
 .hero-links a:hover,
 .hero-links a:focus-visible,
 .inline-link:hover,
-.inline-link:focus-visible,
-.project-card:hover .project-cta,
-.project-card:focus-visible .project-cta {
+.inline-link:focus-visible {
   color: var(--text);
 }
 
@@ -1296,7 +1292,7 @@ textarea {
 }
 
 .project-label-row span,
-.project-focus span,
+.project-focus > span:not(.project-cta),
 .case-meta span {
   display: inline-flex;
   padding: 0.45rem 0.7rem;
@@ -1313,7 +1309,36 @@ textarea {
 }
 
 .project-cta {
-  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.7rem;
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #07101d;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 12px 24px rgba(241, 154, 83, 0.18);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    filter var(--transition);
+}
+
+.project-cta::after {
+  content: "";
+}
+
+.project-card:hover .project-cta,
+.project-card:focus-visible .project-cta {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(241, 154, 83, 0.24);
+  filter: saturate(1.08);
 }
 
 .about-grid {
@@ -3353,7 +3378,7 @@ textarea {
   }
 
   .project-label-row span,
-  .project-focus span,
+  .project-focus > span:not(.project-cta),
   .case-meta span {
     font-size: 0.74rem;
   }
@@ -3361,6 +3386,12 @@ textarea {
   .project-focus {
     justify-content: flex-start;
     gap: 0.55rem;
+  }
+
+  .project-cta {
+    min-height: 2.45rem;
+    padding: 0.64rem 0.92rem;
+    font-size: 0.68rem;
   }
 
   .portrait-card figcaption {
@@ -3800,6 +3831,10 @@ textarea {
 
   .project-meta {
     padding: 0.92rem 0.95rem 1rem;
+  }
+
+  .project-cta {
+    min-width: 100%;
   }
 
   .skills-quote {

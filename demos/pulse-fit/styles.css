@@ -416,7 +416,45 @@ a {
 
 @media (max-width: 720px) {
   .section {
-    padding: 4.2rem 0;
+    padding: 3.8rem 0;
+  }
+
+  .hero h1 {
+    max-width: none;
+    font-size: clamp(2.8rem, 13vw, 4rem);
+  }
+
+  .hero-actions {
+    gap: 0.7rem;
+    margin-top: 1.35rem;
+  }
+
+  .hero-actions .button,
+  .hero-actions .button-outline {
+    width: 100%;
+  }
+
+  .hero-card {
+    padding: 1.15rem;
+    border-radius: 24px;
+  }
+
+  .hero-card strong {
+    font-size: 1.75rem;
+  }
+
+  .compact-card strong {
+    font-size: 1.15rem;
+  }
+
+  .meter {
+    margin-top: 1rem;
+  }
+
+  .section-heading h2,
+  .membership-copy h2,
+  .contact-panel h2 {
+    font-size: clamp(2rem, 9vw, 2.95rem);
   }
 
   .footer-inner {

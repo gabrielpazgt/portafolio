@@ -16,6 +16,72 @@ const trackedSections = navLinks
   .filter(Boolean);
 const expandCards = [...document.querySelectorAll("[data-expand-card]")];
 
+const getPageLanguage = () => {
+  const savedLanguage = window.localStorage?.getItem("portfolio-lang");
+
+  if (savedLanguage === "en") {
+    return "en";
+  }
+
+  return document.documentElement.lang?.startsWith("en") ? "en" : "es";
+};
+
+const uiCopy = {
+  es: {
+    submitDefault: "Enviar mensaje",
+    submitPending: "Enviando...",
+    errorName: "Por favor escribe tu nombre.",
+    errorEmailRequired: "Por favor escribe tu correo.",
+    errorEmailInvalid: "Escribe un correo v\u00e1lido.",
+    errorPhone: "Revisa este n\u00famero de contacto.",
+    errorProject: "Selecciona el tipo de proyecto.",
+    errorMessage: "Cu\u00e9ntame un poco m\u00e1s sobre lo que necesitas.",
+    errorFormInvalid: "Revisa los campos marcados y vuelve a intentarlo.",
+    errorSendDefault:
+      "No pude enviar el mensaje en este momento. Intenta de nuevo en un rato o escr\u00edbeme por WhatsApp.",
+    successSend: "Gracias por escribirme. Te responder\u00e9 pronto.",
+    errorConnection: "No pude conectar el formulario. Intenta de nuevo en un rato o escr\u00edbeme por WhatsApp.",
+    errorDirectContact:
+      "Por ahora puedes escribirme por WhatsApp o LinkedIn mientras termino de conectar el correo directo.",
+    emailSubjectPrefix: "Consulta desde el portafolio",
+    emailLabelName: "Nombre",
+    emailLabelEmail: "Correo",
+    emailLabelPhone: "Tel\u00e9fono",
+    emailLabelProject: "Proyecto",
+    emailLabelMessage: "Mensaje",
+    successEmailClient: "Se abri\u00f3 tu cliente de correo con el mensaje listo para enviar."
+  },
+  en: {
+    submitDefault: "Send message",
+    submitPending: "Sending...",
+    errorName: "Please enter your name.",
+    errorEmailRequired: "Please enter your email.",
+    errorEmailInvalid: "Enter a valid email address.",
+    errorPhone: "Check this contact number.",
+    errorProject: "Select the type of project.",
+    errorMessage: "Tell me a bit more about what you need.",
+    errorFormInvalid: "Check the highlighted fields and try again.",
+    errorSendDefault:
+      "I couldn't send the message right now. Please try again in a moment or message me on WhatsApp.",
+    successSend: "Thanks for reaching out. I'll get back to you soon.",
+    errorConnection: "I couldn't connect the form. Please try again in a moment or message me on WhatsApp.",
+    errorDirectContact:
+      "For now, you can reach me on WhatsApp or LinkedIn while I finish connecting direct email.",
+    emailSubjectPrefix: "Portfolio inquiry",
+    emailLabelName: "Name",
+    emailLabelEmail: "Email",
+    emailLabelPhone: "Phone",
+    emailLabelProject: "Project",
+    emailLabelMessage: "Message",
+    successEmailClient: "Your email app opened with the message ready to send."
+  }
+};
+
+const t = (key) => {
+  const language = getPageLanguage();
+  return uiCopy[language]?.[key] || uiCopy.es[key] || "";
+};
+
 const bindFields = () => {
   document.querySelectorAll("[data-field]").forEach((node) => {
     const key = node.dataset.field;
@@ -83,7 +149,7 @@ const setFormPending = (isPending) => {
   });
 
   if (submitButton) {
-    submitButton.textContent = isPending ? "Enviando..." : "Enviar mensaje";
+    submitButton.textContent = isPending ? t("submitPending") : t("submitDefault");
   }
 };
 
@@ -181,7 +247,7 @@ const setupContactForm = () => {
       errorNode: contactForm.querySelector("#contact-error-name"),
       validate(value) {
         if (!value || value.length < 2) {
-          return "Por favor escribe tu nombre.";
+          return t("errorName");
         }
 
         return "";
@@ -193,11 +259,11 @@ const setupContactForm = () => {
       errorNode: contactForm.querySelector("#contact-error-email"),
       validate(value) {
         if (!value) {
-          return "Por favor escribe tu correo.";
+          return t("errorEmailRequired");
         }
 
         if (!emailPattern.test(value)) {
-          return "Escribe un correo v\u00e1lido.";
+          return t("errorEmailInvalid");
         }
 
         return "";
@@ -215,7 +281,7 @@ const setupContactForm = () => {
         const digits = value.replace(/\D/g, "");
 
         if (!phonePattern.test(value) || digits.length < 7) {
-          return "Revisa este n\u00famero de contacto.";
+          return t("errorPhone");
         }
 
         return "";
@@ -227,7 +293,7 @@ const setupContactForm = () => {
       errorNode: contactForm.querySelector("#contact-error-project"),
       validate(value) {
         if (!value) {
-          return "Selecciona el tipo de proyecto.";
+          return t("errorProject");
         }
 
         return "";
@@ -239,7 +305,7 @@ const setupContactForm = () => {
       errorNode: contactForm.querySelector("#contact-error-message"),
       validate(value) {
         if (!value || value.length < 20) {
-          return "Cu\u00e9ntame un poco m\u00e1s sobre lo que necesitas.";
+          return t("errorMessage");
         }
 
         return "";
@@ -334,7 +400,7 @@ const setupContactForm = () => {
     const isFormValid = Object.keys(fields).every((key) => validateField(key, true));
 
     if (!isFormValid) {
-      setFormStatus("Revisa los campos marcados y vuelve a intentarlo.", "error");
+      setFormStatus(t("errorFormInvalid"), "error");
       focusFirstInvalidField();
       return;
     }
@@ -347,7 +413,7 @@ const setupContactForm = () => {
     if (endpoint) {
       try {
         setFormPending(true);
-        setFormStatus("Enviando...", "loading");
+        setFormStatus(t("submitPending"), "loading");
 
         const response = await fetch(endpoint, {
           method: "POST",
@@ -358,8 +424,7 @@ const setupContactForm = () => {
         });
 
         if (!response.ok) {
-          let errorMessage =
-            "No pude enviar el mensaje en este momento. Intenta de nuevo en un rato o escr\u00edbeme por WhatsApp.";
+          let errorMessage = t("errorSendDefault");
 
           try {
             const responseData = await response.json();
@@ -381,13 +446,10 @@ const setupContactForm = () => {
         contactForm.reset();
         touchedFields.clear();
         clearFieldStates();
-        setFormStatus("Gracias por escribirme. Te responder\u00e9 pronto.", "success");
+        setFormStatus(t("successSend"), "success");
         return;
       } catch {
-        setFormStatus(
-          "No pude conectar el formulario. Intenta de nuevo en un rato o escr\u00edbeme por WhatsApp.",
-          "error"
-        );
+        setFormStatus(t("errorConnection"), "error");
         return;
       } finally {
         setFormPending(false);
@@ -397,10 +459,7 @@ const setupContactForm = () => {
     const email = (portfolioData.email || "").trim();
 
     if (!email) {
-      setFormStatus(
-        "Por ahora puedes escribirme por WhatsApp o LinkedIn mientras termino de conectar el correo directo.",
-        "error"
-      );
+      setFormStatus(t("errorDirectContact"), "error");
       return;
     }
 
@@ -410,15 +469,15 @@ const setupContactForm = () => {
     const project = String(formData.get("project") || "").trim();
     const message = String(formData.get("message") || "").trim();
 
-    const subject = encodeURIComponent(`Consulta desde el portafolio: ${project}`);
+    const subject = encodeURIComponent(`${t("emailSubjectPrefix")}: ${project}`);
     const body = encodeURIComponent(
       [
-        `Nombre: ${name}`,
-        `Correo: ${senderEmail}`,
-        `Tel\u00e9fono: ${phone}`,
-        `Proyecto: ${project}`,
+        `${t("emailLabelName")}: ${name}`,
+        `${t("emailLabelEmail")}: ${senderEmail}`,
+        `${t("emailLabelPhone")}: ${phone}`,
+        `${t("emailLabelProject")}: ${project}`,
         "",
-        "Mensaje:",
+        `${t("emailLabelMessage")}:`,
         message
       ].join("\n")
     );
@@ -427,10 +486,14 @@ const setupContactForm = () => {
     contactForm.reset();
     touchedFields.clear();
     clearFieldStates();
-    setFormStatus("Se abri\u00f3 tu cliente de correo con el mensaje listo para enviar.", "success");
+    setFormStatus(t("successEmailClient"), "success");
   });
 
   clearFieldStates();
+
+  if (submitButton) {
+    submitButton.textContent = t("submitDefault");
+  }
 };
 
 const setupExpandCards = () => {

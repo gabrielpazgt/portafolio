@@ -492,11 +492,31 @@ a {
 
 @media (max-width: 720px) {
   .section {
-    padding: 4.2rem 0;
+    padding: 3.8rem 0;
+  }
+
+  .hero h1 {
+    max-width: none;
+    font-size: clamp(2.6rem, 11vw, 3.45rem);
+  }
+
+  .hero-actions {
+    gap: 0.7rem;
+    margin-top: 1.35rem;
+  }
+
+  .hero-actions .button,
+  .hero-actions .button-outline {
+    width: 100%;
+  }
+
+  .hero-highlights span {
+    font-size: 0.82rem;
+    padding: 0.55rem 0.78rem;
   }
 
   .hero-visual {
-    min-height: 380px;
+    min-height: 280px;
   }
 
   .floating-estate {
@@ -511,6 +531,22 @@ a {
   .main-estate {
     position: relative;
     inset: auto;
+    padding: 1.3rem;
+  }
+
+  .main-estate::before {
+    inset: 16px 16px 132px;
+  }
+
+  .main-estate strong,
+  .floating-estate strong {
+    font-size: 1.28rem;
+  }
+
+  .section-heading h2,
+  .method-copy h2,
+  .inquiry-panel h2 {
+    font-size: clamp(1.95rem, 8.6vw, 2.7rem);
   }
 
   .footer-inner {

@@ -418,7 +418,58 @@ a {
 
 @media (max-width: 720px) {
   .section {
-    padding: 4.2rem 0;
+    padding: 3.8rem 0;
+  }
+
+  .hero h1 {
+    max-width: none;
+    font-size: clamp(2.55rem, 11vw, 3.4rem);
+  }
+
+  .hero-actions {
+    gap: 0.7rem;
+    margin-top: 1.35rem;
+  }
+
+  .hero-actions .button,
+  .hero-actions .button-outline {
+    width: 100%;
+  }
+
+  .dashboard,
+  .side-stat,
+  .platform-panels article,
+  .access-panel {
+    padding: 1rem;
+    border-radius: 24px;
+  }
+
+  .dashboard strong {
+    font-size: 1.78rem;
+  }
+
+  .chart-area {
+    min-height: 140px;
+    margin: 1rem 0;
+  }
+
+  .dashboard-bottom article {
+    width: 100%;
+    padding: 0.85rem;
+  }
+
+  .side-stat strong {
+    font-size: 1.28rem;
+  }
+
+  .side-stat p {
+    line-height: 1.65;
+  }
+
+  .platform-copy h2,
+  .access-panel h2,
+  .section-heading h2 {
+    font-size: clamp(1.9rem, 8.6vw, 2.65rem);
   }
 
   .dashboard-top,
